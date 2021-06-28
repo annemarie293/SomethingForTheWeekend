@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*----------------------------------------------------------------NavBar--------------------*/
+
+/*-------Default / small screens---------*/
+nav {
+    background-color: #FB9489;
+}
+
+nav img {
+    display: inline;
+    width: 220px;
+    height: 40px;
+}
+
+
+/*---------tablets/laptops ---------*/
+
+@media (min-width: 700px) {
+    nav img {
+        width: 500px;
+        height: 75px;
+    }
+
+    #navbar-links{
+        margin-left: auto;
+    }
+
+      nav li a {
+        font-size: 25px;
+        margin-right: 10px;
+        color: #00205b;
+    }
+}
+
+/*---------larger screens ---------*/
+
+@media (min-width: 1030px) {
+    nav img {
+        width: 600px;
+        height: 100px;
+    }
+
+  
+
+    .destination-button {
+        display: block;
+        margin: 0 auto;
+
+    }
+}
+
+#summer-button {
+    background: url("assets/images/summer.jpg");
+}
+
+#winter-button {
+    background: url("assets/images/winter.jpg");
+}
+
+#city-button {
+    background: url("assets/images/city.jpg");
+}
+
+#food-button {
+    background: url("assets/images/food.jpg");
+}
