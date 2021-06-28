@@ -26,11 +26,11 @@ nav img {
         height: 75px;
     }
 
-    #navbar-links{
-        margin-left: auto;
-    }
+#navbar-links {
+    margin-left: auto;
+}
 
-      nav li a {
+    nav li a {
         font-size: 25px;
         margin-right: 10px;
         color: #00205b;
@@ -45,13 +45,86 @@ nav img {
         height: 100px;
     }
 
-  
+}
 
-    .destination-button {
-        display: block;
-        margin: 0 auto;
+/*-------------------------------------------------------------------Footer--------------------*/
 
+/*----------Default/Mobile----------*/
+footer {
+    background-color: #FB9489;
+    padding-top: 10px;
+    width: 100%;
+
+}
+
+#logo-footer img {
+    display: inline;
+    height: 25px;
+    width: 150px;
+}
+
+
+.social-links li a i {
+    color: #00205b;
+    width: 28px;
+    text-align: center;
+    font-size: 20px;   
+}
+
+.social-links li a i:hover {
+    color: #ffffff;
+}
+
+
+/*------------very small screens---------------*/
+@media screen and (max-width: 387px) {
+    .social-links li a i {
+        width: 24px;
+        text-align: center;
+        font-size: 15px;
     }
+
+    #social-links-footer {
+        padding-left: 0;
+    }
+
+    #logo-footer {
+        padding-right: 0;
+    }
+}
+
+/*------------Tablets + laptops-----------*/
+@media screen and (min-width: 700px) {
+    #logo-footer img {
+        height: 50px;
+        width: 250px;
+    }
+
+    .social-links li a i {
+        width: 40px;
+        font-size: 30px;
+    }
+
+    #social-links-footer{
+        margin-top: 10px;
+    }
+
+}
+
+/*---------larger screens ---------*/
+
+@media (min-width: 1030px) {
+    #logo-footer img {
+        height: 50px;
+        width: 350px;
+    }
+}
+
+
+.destination-button {
+    display: block;
+    margin: 0 auto;
+
 }
 
 #summer-button {
