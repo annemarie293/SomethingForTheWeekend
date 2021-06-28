@@ -49,14 +49,23 @@ nav img {
 
 /*-------------------------------------------------------------------Hero-Image--------------------*/
 
+/*----------Default/Mobile----------*/
 .hero-image{
-    background-image: url("../images/hero-image.jpg");
+    background-image: url("../images/hero-image-small.jpg");
     background-size: cover;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     max-width: 100%;
+}
+
+/*----------Tablets and larger ----------*/
+
+@media screen and (min-width: 700px) {
+.hero-image{
+    background-image: url("../images/hero-image.jpg");
+}
 }
 
 /*-------------------------------------------------------------------Footer--------------------*/
