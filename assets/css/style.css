@@ -74,20 +74,65 @@ nav img {
     padding-top: 25px;
 }
 
-#image-button {
-    display: inline;
-    margin-left: 35%;
+.hero-image-button-one {
+    margin-left: 23%;
     margin-bottom: 10px;
     text-align: center;
+    background-color: #00205b;
+    color: #ffffff;
 }
 
-/*----------Tablets and larger Bigger Image ----------*/
+.hero-image-button-one:hover {
+    color: #FB9489;
+}
+
+.hero-image-button-two {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #00205b;
+    
+}
+
+.hero-image-button-two a {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+/*----------Tablets and larger: Bigger Image + button ----------*/
 
 @media screen and (min-width: 700px) {
     .hero-image {
         background-image: url("../images/hero-image.jpg");
     }
 }
+
+
+@media screen and (min-width: 1024px) {
+    .hero-image-button-one {
+    margin-left: 30%;
+    }
+    
+    .hero-image-button-two{
+        margin-left: 5%;
+    }
+
+    .hero-image-button-two a{
+        font-size: larger;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hero-image-button-one {
+    margin-left: 35%;
+    }
+    
+    .hero-image-button-two{
+        margin-left: 20%;
+    }
+}
+
 
 /*----------smaller text for mobile----------*/
 @media screen and (max-width: 760px) {
@@ -98,6 +143,10 @@ nav img {
     .hero-image-text {
         left: 27%;
         width: 200px;
+    }
+
+    .hero-image-button-one{
+        margin-left: 13%;
     }
 }
 
