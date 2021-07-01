@@ -4,6 +4,8 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/*----------------------------------------------------------------HEADER-FOOTER ALL PAGES--------------------*/
+
 /*----------------------------------------------------------------NavBar--------------------*/
 
 /*-------Default / small screens---------*/
@@ -46,115 +48,6 @@ nav img {
         height: 100px;
     }
 
-}
-
-/*-------------------------------------------------------------------Hero-Image--------------------*/
-
-/*----------Default----------*/
-.hero-image {
-    background-image: url("../images/hero-image-small.jpg");
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 100%;
-}
-
-.hero-image-text {
-    color: #00205b;
-    position: absolute;
-    top: 25%;
-    background-color: rgba(251, 148, 137, 0.7);
-    border-radius: 5%;
-}
-
-.hero-image-text h2 {
-    text-align: center;
-    padding-top: 25px;
-}
-
-.hero-image-button-one {
-    margin-left: 23%;
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: #00205b;
-    color: #ffffff;
-}
-
-.hero-image-button-one:hover {
-    color: #FB9489;
-}
-
-.hero-image-button-two {
-    margin-left: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: #00205b;
-    
-}
-
-.hero-image-button-two a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/*----------Tablets and larger: Bigger Image + button ----------*/
-
-@media screen and (min-width: 700px) {
-    .hero-image {
-        background-image: url("../images/hero-image.jpg");
-    }
-}
-
-
-@media screen and (min-width: 1024px) {
-    .hero-image-button-one {
-    margin-left: 30%;
-    }
-    
-    .hero-image-button-two{
-        margin-left: 5%;
-    }
-
-    .hero-image-button-two a{
-        font-size: larger;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .hero-image-button-one {
-    margin-left: 35%;
-    }
-    
-    .hero-image-button-two{
-        margin-left: 20%;
-    }
-}
-
-
-/*----------smaller text for mobile----------*/
-@media screen and (max-width: 760px) {
-    .hero-image-text h2 {
-        font-size: 20px;
-    }
-
-    .hero-image-text {
-        left: 27%;
-        width: 200px;
-    }
-
-    .hero-image-button-one{
-        margin-left: 13%;
-    }
-}
-
-@media screen and (max-width: 320px) {
-
-    .hero-image-text {
-        left: 20%;
-        width: 200px;
-    }
 }
 
 /*-------------------------------------------------------------------Footer--------------------*/
@@ -237,18 +130,166 @@ footer {
 
 }
 
-#summer-button {
-    background: url("assets/images/summer.jpg");
+
+/*-----------------------------------------------------------------------HOME PAGE--------------------*/
+
+/*------------------------------------------------------Hero-Image--------------------*/
+
+/*----------Default----------*/
+.hero-image {
+    background-image: url("../images/hero-image-small.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 100%;
 }
 
-#winter-button {
-    background: url("assets/images/winter.jpg");
+.hero-image-text {
+    color: #00205b;
+    position: absolute;
+    top: 25%;
+    background-color: rgba(251, 148, 137, 0.7);
+    border-radius: 5%;
+    height: 250px;
 }
 
-#city-button {
-    background: url("assets/images/city.jpg");
+.hero-image-text h2 {
+    text-align: center;
+    padding-top: 25px;
 }
 
-#food-button {
-    background: url("assets/images/food.jpg");
+.hero-image-button-one {
+    margin-left: 23%;
+    margin-bottom: 10px;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    background-color: #00205b;
+    color: #ffffff;
+}
+
+.hero-image-button-one:hover {
+    color: #FB9489;
+}
+
+.hero-image-button-two {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #00205b;
+    
+}
+
+.hero-image-button-two a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*----------Tablets and larger: Bigger Image + button ----------*/
+
+@media screen and (min-width: 700px) {
+    .hero-image {
+        background-image: url("../images/hero-image.jpg");
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .hero-image-button-one {
+    margin-left: 30%;
+    }
+    
+    .hero-image-button-two{
+        margin-left: 5%;
+    }
+
+    .hero-image-button-two a{
+        font-size: larger;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hero-image-button-one {
+    margin-left: 35%;
+    }
+    
+    .hero-image-button-two{
+        margin-left: 20%;
+    }
+}
+
+
+/*----------smaller text for mobile----------*/
+@media screen and (max-width: 760px) {
+    .hero-image-text h2 {
+        font-size: 20px;
+    }
+
+    .hero-image-text {
+        left: 27%;
+        width: 200px;
+    }
+
+    .hero-image-button-one{
+        margin-left: 13%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .hero-image-text {
+        left: 20%;
+        width: 200px;
+    }
+}
+
+/*----------------------------------------------------------------DESTINATIONS PAGE--------------------*/
+
+.destinations-intro-text{
+    color: #00205b;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.destinations-intro-buttons{
+    margin: 0 auto;
+}
+
+
+#summer-button-div {
+    background-image: url("../images/summer.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 200px;
+    border:3px solid #ffffff;
+}
+
+#winter-button-div {
+    background-image: url("../images/winter.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+     height: 200px;
+     border:3px solid #ffffff;
+}
+
+#city-button-div {
+    background-image: url("../images/city.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 200px;
+    border:3px solid #ffffff;
+}
+
+#food-button-div {
+    background-image: url("../images/food.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 200px;
+    border:3px solid #ffffff;
 }
