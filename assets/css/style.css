@@ -247,6 +247,8 @@ footer {
 
 /*----------------------------------------------------------------DESTINATIONS PAGE--------------------*/
 
+
+/*------------------------------Destinations buttons section-----------------*/
 .destinations-intro-text{
     color: #00205b;
     margin: 0 auto;
@@ -257,14 +259,19 @@ footer {
     margin: 0 auto;
 }
 
+.destination-button{
+    margin-top: 3rem;
+    color: #00205b;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 75px;
+}
+
 
 #summer-button-div {
     background-image: url("../images/summer.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
-    background-size: cover; 
-    height: 200px;
-    border:3px solid #ffffff;
+    background-size: cover;
 }
 
 #winter-button-div {
@@ -272,8 +279,6 @@ footer {
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
-     height: 200px;
-     border:3px solid #ffffff;
 }
 
 #city-button-div {
@@ -281,8 +286,6 @@ footer {
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
-    height: 200px;
-    border:3px solid #ffffff;
 }
 
 #food-button-div {
@@ -290,10 +293,32 @@ footer {
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
-    height: 200px;
+}
+
+.destination-button-div{
+    height: 12rem;
     border:3px solid #ffffff;
 }
 
+#destinations-intro-buttons a{
+    text-decoration: none;
+    color:#00205b;
+}
+
+/*----------smaller button div for mobile----------*/
+@media screen and (max-width: 425px) {
+    .destination-button-div{
+        height: 10rem;
+    }
+    .destination-button{
+        margin-top: 2rem;
+        height: 65px;
+    }
+}
+
+
+
+/*------------------------------locations map section-----------------*/
 
 .google-map-header{
     color: #00205b;
@@ -304,12 +329,26 @@ footer {
 #google-map{
     
     height: 400px;
-    width:800px;
+    width:100%;
     margin:0 auto;
 }
 
 .location-button {
     background-color: #FB9489;
     color:#00205b;
+    text-align: center;
+    border: 2px solid #FB9489;
+    width: 115px;
+    transition: 0.3s;
+}
+
+.location-button:hover{
+    background-color: #ffffff;
+}
+
+.location-button-selected {
+    background-color: #00205b;
+    color:#FB9489;
+    border: 2px solid #00205b;
     text-align: center;
 }

@@ -10,7 +10,7 @@
     <title>SFTW</title>
 </head>
 
-<body class="g-0">
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -39,48 +39,44 @@
         </nav>
     </header>
 
-   < <div class="destinations-intro container-fluid">
+    <div class="destinations-intro container-fluid">
         <div class="destinations-intro-text container-fluid mt-3">
             <h2>What's your destination vibe?</h2>
             <p>Let's get started! </br> Just pick a type of break from the options below, and we'll share our favourite
                 locations to suit your mood. You'll be booking flights in no time!</p>
         </div>
 
-        <div class="destinations-intro-buttons container-fluid  row">
-            <div class="col-6 col-md-3" id="summer-button-div" >
-                <button type="button" id="summer-button" class="destination-button btn btn-lg">Summer Sun</button>
+        <div id="destinations-intro-buttons" class="destinations-intro-buttons container-fluid row px-1">
+            <div class="col-6 col-md-3 destination-button-div" id="summer-button-div">
+                <button type="button" id="summer-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">Summer Sun</a>
+                </button>
             </div>
-            <div class="col-6 col-md-3" id="winter-button-div">
-                <button type="button" id="winter-button" class="destination-button btn btn-lg">Winter Chill</button>
+            <div class="col-6 col-md-3 destination-button-div" id="winter-button-div">
+                <button type="button" id="winter-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">Winter Chill</a></button>
             </div>
-            <div class="col-6 col-md-3" id="city-button-div">
-                <button type="button" id="city-button" class="destination-button btn btn-lg">City Break</button>
+            <div class="col-6 col-md-3 destination-button-div" id="city-button-div">
+                <button type="button" id="city-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">City Break</a></button>
             </div>
-            <div class="col-6 col-md-3" id="food-button-div">
-                <button type="button" id="food-button" class="destination-button btn btn-lg">Foodie Feast</button>
+            <div class="col-6 col-md-3 destination-button-div" id="food-button-div">
+                <button type="button" id="food-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">Foodie Feast</a></button>
             </div>
         </div>
     </div>
-    
+
     <!-- Google Map section -->
-    
+
     <div class="container-fluid google-map-container">
         <h2 class="google-map-header p-3">Take Me To...?</h2>
         <div id="google-map" class="container-fluid m-auto p-3">
         </div>
-        <div class="row">
-            <div id="location-buttons" class="gap-2 col-3 mx-auto p-3">
+        <div id="location-buttons" class="container-fluid text-center gap-2 m-auto p-3"> 
                 <!-- Empty div for location buttons-->
-             <!--<button type="button" id="arcachon-button" class="location-button btn btn-lg m-auto">Arcachon</button>
-                <button type="button" id="madeira-button" class="location-button btn btn-lg m-auto">Madeira</button>
-              <button type="button" id="ischia-button" class="location-button btn btn-lg m-auto">Ischia</button>
-             <button type="button" id="skiathos-button" class="location-button btn btn-lg m-auto">Skiathos</button> -->
-            
-            </div>
         </div>
     </div>
-    
-    
+    </div>
+    </div>
+
+
     <!-- Footer Section  -->
 
     <footer class="bottom-0 pb-1">
@@ -112,7 +108,7 @@
         </div>
     </footer>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
