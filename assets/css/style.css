@@ -307,3 +307,9 @@ footer {
     width:800px;
     margin:0 auto;
 }
+
+.location-button {
+    background-color: #FB9489;
+    color:#00205b;
+    text-align: center;
+}
