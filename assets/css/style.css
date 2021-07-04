@@ -124,13 +124,6 @@ footer {
 }
 
 
-.destination-button {
-    display: block;
-    margin: 0 auto;
-
-}
-
-
 /*-----------------------------------------------------------------------HOME PAGE--------------------*/
 
 /*------------------------------------------------------Hero-Image--------------------*/
@@ -259,11 +252,35 @@ footer {
     margin: 0 auto;
 }
 
+.destination-button-div{
+    height: 12rem;
+    border:3px solid #ffffff;
+}
+
 .destination-button{
-    margin-top: 3rem;
-    color: #00205b;
     background-color: rgba(255, 255, 255, 0.7);
     height: 75px;
+    display: block;
+    margin: 3rem auto;
+}
+
+.destination-button-active{
+    background-color: rgba(0, 32, 91, 0.6);
+    height: 75px;
+    display: block;
+    margin: 3rem auto;
+    border: 6px solid #FB9489;
+}
+
+
+.destination-button a{
+    text-decoration: none;
+    color:#00205b;
+}
+
+.destination-button-active a{
+    text-decoration: none;
+    color:#ffffff;
 }
 
 
@@ -295,15 +312,8 @@ footer {
     background-size: cover;
 }
 
-.destination-button-div{
-    height: 12rem;
-    border:3px solid #ffffff;
-}
 
-#destinations-intro-buttons a{
-    text-decoration: none;
-    color:#00205b;
-}
+
 
 /*----------smaller button div for mobile----------*/
 @media screen and (max-width: 425px) {
@@ -313,6 +323,11 @@ footer {
     .destination-button{
         margin-top: 2rem;
         height: 65px;
+    }
+    .destination-button-active{
+        margin-top: 2rem;
+        height: 65px;
+        border: 6px solid #FB9489;
     }
 }
 

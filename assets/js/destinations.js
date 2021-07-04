@@ -84,6 +84,7 @@ const foodLocations = [{
   }
 ]
 
+// function to add marker locations on google map for the selection destinaation group
 function markMap(markerLocations) {
   const map = new google.maps.Map(document.getElementById("google-map"), {
     zoom: 2.5,
@@ -105,31 +106,44 @@ function markMap(markerLocations) {
 
   new MarkerClusterer(map, markers, {
     imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-  });;}
+  });;
+
+}
+
+//function to remove active CSS classs from previously selected destination button, and apply to current selected desintation
+function destinationButtonActiveSwitch(buttonID) {
+  $(".destination-button-active").removeClass("destination-button-active").addClass("destination-button");
+  $(buttonID).removeClass("destination-button").addClass("destination-button-active");
+}
 
 
-$("#summer-button").click(function(){
+$("#summer-button").click(function () {
+  var buttonID = $("#summer-button");
+  destinationButtonActiveSwitch(buttonID);
   markMap(summerLocations);
   $("#location-buttons").html('<button type="button" id="arcachon-button" class="location-button btn btn-lg">Arcachon</button> <button type="button" id="madeira-button" class="location-button btn btn-lg">Madeira</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="ischia-button" class="location-button btn btn-lg">Ischia</button> <button type="button" id="skiathos-button" class="location-button btn btn-lg">Skiathos</button>');
 });
 
 
-$("#winter-button").click(function(){
+$("#winter-button").click(function () {
+  var buttonID = $("#winter-button");
+  destinationButtonActiveSwitch(buttonID);
   markMap(winterLocations);
- $("#location-buttons").html('<button type="button" id="budapest-button" class="location-button btn btn-lg">Budapest</button> <button type="button" id="hallstatt-button" class="location-button btn btn-lg">Hallstatt</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="tallinn-button" class="location-button btn btn-lg">Tallinn</button> <button type="button" id="bergen-button" class="location-button btn btn-lg">Bergen</button>');
+  $("#location-buttons").html('<button type="button" id="budapest-button" class="location-button btn btn-lg">Budapest</button> <button type="button" id="hallstatt-button" class="location-button btn btn-lg">Hallstatt</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="tallinn-button" class="location-button btn btn-lg">Tallinn</button> <button type="button" id="bergen-button" class="location-button btn btn-lg">Bergen</button>');
 })
 
-$("#city-button").click(function(){
+$("#city-button").click(function () {
+  var buttonID = $("#city-button");
+  destinationButtonActiveSwitch(buttonID);
   markMap(cityLocations);
   $("#location-buttons").html('<button type="button" id="riga-button" class="location-button btn btn-lg">Riga</button> <button type="button" id="gdansk-button" class="location-button btn btn-lg">Gdansk</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="bruges-button" class="location-button btn btn-lg">Bruges</button> <button type="button" id="porto-button" class="location-button btn btn-lg">Porto</button>');
 });
 
 
-$("#food-button").click(function(){
+$("#food-button").click(function () {
+  var buttonID = $("#food-button");
+  destinationButtonActiveSwitch(buttonID);
   markMap(foodLocations);
- $("#location-buttons").html('<button type="button" id="palermo-button" class="location-button btn btn-lg">Palermo</button> <button type="button" id="naples-button" class="location-button btn btn-lg">Naples</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="lille-button" class="location-button btn btn-lg">Lille</button> <button type="button" id="galway-button" class="location-button btn btn-lg">Galway</button>');
+  $("#location-buttons").html('<button type="button" id="palermo-button" class="location-button btn btn-lg">Palermo</button> <button type="button" id="naples-button" class="location-button btn btn-lg">Naples</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="lille-button" class="location-button btn btn-lg">Lille</button> <button type="button" id="galway-button" class="location-button btn btn-lg">Galway</button>');
+
 })
-
-
-
-
