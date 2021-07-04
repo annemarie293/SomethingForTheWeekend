@@ -6,6 +6,13 @@ function initMap() {
       lng: 14.654953491288719
     },
   });
+  const map2 = new google.maps.Map(document.getElementById("location-map"), {
+    zoom: 2.5,
+    center: {
+      lat: 48.91473349834997,
+      lng: 14.654953491288719
+    },
+  });
 }
 
 const summerLocations = [{
@@ -116,14 +123,13 @@ function destinationButtonActiveSwitch(buttonID) {
   $(buttonID).removeClass("destination-button").addClass("destination-button-active");
 }
 
-
+//scripts to add location markers to map and highlight destination type button once selected
 $("#summer-button").click(function () {
   var buttonID = $("#summer-button");
   destinationButtonActiveSwitch(buttonID);
   markMap(summerLocations);
   $("#location-buttons").html('<button type="button" id="arcachon-button" class="location-button btn btn-lg">Arcachon</button> <button type="button" id="madeira-button" class="location-button btn btn-lg">Madeira</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="ischia-button" class="location-button btn btn-lg">Ischia</button> <button type="button" id="skiathos-button" class="location-button btn btn-lg">Skiathos</button>');
 });
-
 
 $("#winter-button").click(function () {
   var buttonID = $("#winter-button");
@@ -139,7 +145,6 @@ $("#city-button").click(function () {
   $("#location-buttons").html('<button type="button" id="riga-button" class="location-button btn btn-lg">Riga</button> <button type="button" id="gdansk-button" class="location-button btn btn-lg">Gdansk</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="bruges-button" class="location-button btn btn-lg">Bruges</button> <button type="button" id="porto-button" class="location-button btn btn-lg">Porto</button>');
 });
 
-
 $("#food-button").click(function () {
   var buttonID = $("#food-button");
   destinationButtonActiveSwitch(buttonID);
@@ -147,3 +152,109 @@ $("#food-button").click(function () {
   $("#location-buttons").html('<button type="button" id="palermo-button" class="location-button btn btn-lg">Palermo</button> <button type="button" id="naples-button" class="location-button btn btn-lg">Naples</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="lille-button" class="location-button btn btn-lg">Lille</button> <button type="button" id="galway-button" class="location-button btn btn-lg">Galway</button>');
 
 })
+
+
+//Function to search for nearby hotels in the selected location
+function hotelMap(lat, lng) {
+  const location = new google.maps.LatLng(lat, lng);
+  //infowindow = new google.maps.InfoWindow();
+  map2 = new google.maps.Map(document.getElementById("location-map"), {
+    center: location,
+    zoom: 14,
+  });
+  // Create the places service.
+  const service = new google.maps.places.PlacesService(map2);
+
+  // Perform a nearby search.
+  service.nearbySearch({
+      location: location,
+      radius: 10000,
+      type: "lodging"
+    },
+    (results, status) => {
+      if (status !== "OK" || !results) return;
+      addPlaces(results, map2);
+    }
+  );
+}
+//Function to add hotel markers on to the city map of the selected location
+function addPlaces(places, map) {
+  for (const place of places) {
+    if (!place.geometry || !place.geometry.location) return;
+    const marker = new google.maps.Marker({
+      map,
+      title: place.name,
+      position: place.geometry.location,
+    });
+    google.maps.event.addListener(marker, "click", () => {
+      infowindow.setContent(place.name || "");
+      infowindow.open(map);
+    });
+  }
+}
+
+$(document).on("DOMNodeInserted", "#arcachon-button", function() {
+$(this).click(function () {
+  hotelMap((summerLocations[0].lat), (summerLocations[0].lng));
+});
+});
+
+$("#madeira-button").click(function () {
+  hotelMap((summerLocations[1].lat), (summerLocations[1].lng));
+});
+
+$("#ischia-button").click(function () {
+  hotelMap(summerLocations[2].lat, summerLocations[2].lng);
+});
+
+$("#skiathos-button").click(function () {
+  hotelMap(summerLocations[3].lat, summerLocations[3].lng);
+});
+
+$("#budapest-button").click(function () {
+  hotelMap(winterLocations[0].lat, winterLocations[0].lng);
+});
+
+$("#hallstatt-button").click(function () {
+  hotelMap(winterLocations[1].lat, winterLocations[1].lng);
+});
+
+$("#tallinn-button").click(function () {
+  hotelMap(winterLocations[2].lat, winterLocations[2].lng);
+});
+
+$("#bergen-button").click(function () {
+  hotelMap(winterLocations[3].lat, winterLocations[3].lng);
+});
+
+$("#riga-button").click(function () {
+  hotelMap(cityLocations[0].lat, cityLocations[0].lng);
+});
+
+$("#gdansk-button").click(function () {
+  hotelMap(cityLocations[1].lat, cityLocations[1].lng);
+});
+
+$("#bruges-button").click(function () {
+  hotelMap(cityLocations[2].lat, cityLocations[2].lng);
+});
+
+$("#porto-button").click(function () {
+  hotelMap(cityLocations[3].lat, cityLocations[3].lng);
+});
+
+$("#palermo-button").click(function () {
+  hotelMap(foodLocations[0].lat, foodLocations[0].lng);
+});
+
+$("#naples-button").click(function () {
+  hotelMap(foodLocations[1].lat, summerLocations[1].lng);
+});
+
+$("#lille-button").click(function () {
+  hotelMap(foodLocations[2].lat, foodLocations[2].lng);
+});
+
+$("#galway-button").click(function () {
+  hotelMap(foodLocations[2].lat, foodLocations[2].lng);
+});

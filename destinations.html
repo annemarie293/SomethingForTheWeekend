@@ -48,36 +48,48 @@
 
         <div id="destinations-intro-buttons" class="destinations-intro-buttons container-fluid row px-1">
             <div class="col-6 col-md-3 destination-button-div" id="summer-button-div">
-                <button type="button" id="summer-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">Summer Sun</a>
+                <button type="button" id="summer-button" class="destination-button btn btn-lg"><a
+                        href="#destinations-intro-buttons">Summer Sun</a>
                 </button>
             </div>
             <div class="col-6 col-md-3 destination-button-div" id="winter-button-div">
-                <button type="button" id="winter-button" class="destination-button-active btn btn-lg"><a href="#destinations-intro-buttons">Winter Chill</a></button>
+                <button type="button" id="winter-button" class="destination-button btn btn-lg"><a
+                        href="#destinations-intro-buttons">Winter Chill</a></button>
             </div>
             <div class="col-6 col-md-3 destination-button-div" id="city-button-div">
-                <button type="button" id="city-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">City Break</a></button>
+                <button type="button" id="city-button" class="destination-button btn btn-lg"><a
+                        href="#destinations-intro-buttons">City Break</a></button>
             </div>
             <div class="col-6 col-md-3 destination-button-div" id="food-button-div">
-                <button type="button" id="food-button" class="destination-button btn btn-lg"><a href="#destinations-intro-buttons">Foodie Feast</a></button>
+                <button type="button" id="food-button" class="destination-button btn btn-lg"><a
+                        href="#destinations-intro-buttons">Foodie Feast</a></button>
             </div>
         </div>
     </div>
 
-    <!-- Google Map section -->
+    <!------------------------------------------------------------------------- Google Map section -->
 
     <div class="container-fluid google-map-container">
         <h2 class="google-map-header p-3">Take Me To...?</h2>
         <div id="google-map" class="container-fluid m-auto p-3">
         </div>
-        <div id="location-buttons" class="container-fluid text-center gap-2 m-auto p-3"> 
-                <!-- Empty div for location buttons-->
+        <div id="location-buttons" class="container-fluid text-center gap-2 m-auto p-3">
+            <!-- Empty div for location buttons-->
         </div>
     </div>
-    
-    <!-- Google Map section -->
 
+    <!---------------------------------------------------------------- Locations-information section -->
 
-    <!-- Footer Section  -->
+    <div class="row">
+        <div id="location-information" class="col-sm-12 col-md-6 container-fluid">
+        </div>
+
+        <div id="location-map" class="col-sm-12 col-md-6 container-fluid">
+        </div>
+
+    </div>
+
+    <!------------------------------------------------------------------------------ Footer Section  -->
 
     <footer class="bottom-0 pb-1">
         <div class="container-fluid">
@@ -114,11 +126,13 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="assets/js/destinations.js" type="text/javascript"></script>
+
     <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu4oiHxRMaKogFKqPh5Svk-xFV5ekVOTs&callback=initMap"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu4oiHxRMaKogFKqPh5Svk-xFV5ekVOTs&libraries=places&callback=initMap"
         type="text/javascript"></script>
+    <script src="assets/js/destinations.js" type="text/javascript"></script>
+
 
 </body>
 

@@ -333,7 +333,7 @@ footer {
 
 
 
-/*------------------------------locations map section-----------------*/
+/*----------------------------------------Google map section-----------------*/
 
 .google-map-header{
     color: #00205b;
@@ -366,4 +366,11 @@ footer {
     color:#FB9489;
     border: 2px solid #00205b;
     text-align: center;
+}
+
+/*---------------------------------Locations map section-----------------*/
+#location-map{
+    height: 400px;
+    max-width:100%;
+    margin:0 auto;
 }
