@@ -156,9 +156,10 @@ $("#food-button").click(function () {
 
 //Function to search for nearby hotels in the selected location
 function hotelMap(lat, lng) {
+
   const location = new google.maps.LatLng(lat, lng);
   //infowindow = new google.maps.InfoWindow();
-  map2 = new google.maps.Map(document.getElementById("location-map"), {
+  const map2 = new google.maps.Map(document.getElementById("location-map"), {
     center: location,
     zoom: 14,
   });
@@ -193,98 +194,107 @@ function addPlaces(places, map) {
   }
 }
 
-$(document).on("DOMNodeInserted", "#arcachon-button", function() {
-$(this).click(function () {
-  hotelMap((summerLocations[0].lat), (summerLocations[0].lng));
-});
+// to remove hidden class from loactions section on click on location button
+
+function showHiddenSection() {
+  $(".hide").removeClass("hide");
+}
+
+// click function for each location button
+$(document).on("DOMNodeInserted", "#arcachon-button", function () {
+  $(this).click(function () {
+    showHiddenSection();
+    hotelMap((summerLocations[0].lat), (summerLocations[0].lng));
+    
+  });
 });
 
-$(document).on("DOMNodeInserted", "#madeira-button", function() {
-$(this).click(function () {
-  hotelMap((summerLocations[1].lat), (summerLocations[1].lng));
-});
-});
-
-$(document).on("DOMNodeInserted", "#ischia-button", function() {
-$(this).click(function () {
-  hotelMap(summerLocations[2].lat, summerLocations[2].lng);
-});
+$(document).on("DOMNodeInserted", "#madeira-button", function () {
+  $(this).click(function () {
+    hotelMap((summerLocations[1].lat), (summerLocations[1].lng));
+  });
 });
 
-$(document).on("DOMNodeInserted", "#skiathos-button", function() {
-$(this).click(function () {
-  hotelMap(summerLocations[3].lat, summerLocations[3].lng);
-});
-});
-
-$(document).on("DOMNodeInserted", "#budapest-button", function() {
-$(this).click(function () {
-  hotelMap(winterLocations[0].lat, winterLocations[0].lng);
-});
+$(document).on("DOMNodeInserted", "#ischia-button", function () {
+  $(this).click(function () {
+    hotelMap(summerLocations[2].lat, summerLocations[2].lng);
+  });
 });
 
-$(document).on("DOMNodeInserted", "#hallstatt-button", function() {
-$(this).click(function () {
-  hotelMap(winterLocations[1].lat, winterLocations[1].lng);
-});
-});
-
-$(document).on("DOMNodeInserted", "#tallinn-button", function() {
-$(this).click(function () {
-  hotelMap(winterLocations[2].lat, winterLocations[2].lng);
-});
+$(document).on("DOMNodeInserted", "#skiathos-button", function () {
+  $(this).click(function () {
+    hotelMap(summerLocations[3].lat, summerLocations[3].lng);
+  });
 });
 
-$(document).on("DOMNodeInserted", "#bergen-button", function() {
-$(this).click(function () {
-  hotelMap(winterLocations[3].lat, winterLocations[3].lng);
-});
-});
-
-$(document).on("DOMNodeInserted", "#riga-button", function() {
-$(this).click(function () {
-  hotelMap(cityLocations[0].lat, cityLocations[0].lng);
-});
+$(document).on("DOMNodeInserted", "#budapest-button", function () {
+  $(this).click(function () {
+    hotelMap(winterLocations[0].lat, winterLocations[0].lng);
+  });
 });
 
-$(document).on("DOMNodeInserted", "#gdansk-button", function() {
-$(this).click(function () {
-  hotelMap(cityLocations[1].lat, cityLocations[1].lng);
-});
-});
-
-$(document).on("DOMNodeInserted", "#bruges-button", function() {
-$(this).click(function () {
-  hotelMap(cityLocations[2].lat, cityLocations[2].lng);
-});
+$(document).on("DOMNodeInserted", "#hallstatt-button", function () {
+  $(this).click(function () {
+    hotelMap(winterLocations[1].lat, winterLocations[1].lng);
+  });
 });
 
-$(document).on("DOMNodeInserted", "#porto-button", function() {
-$(this).click(function () {
-  hotelMap(cityLocations[3].lat, cityLocations[3].lng);
-});
-});
-
-$(document).on("DOMNodeInserted", "#palermo-button", function() {
-$(this).click(function () {
-  hotelMap(foodLocations[0].lat, foodLocations[0].lng);
-});
+$(document).on("DOMNodeInserted", "#tallinn-button", function () {
+  $(this).click(function () {
+    hotelMap(winterLocations[2].lat, winterLocations[2].lng);
+  });
 });
 
-$(document).on("DOMNodeInserted", "#naples-button", function() {
-$(this).click(function () {
-  hotelMap(foodLocations[1].lat, foodLocations[1].lng);
-});
-});
-
-$(document).on("DOMNodeInserted", "#lille-button", function() {
-$(this).click(function () {
-  hotelMap(foodLocations[2].lat, foodLocations[2].lng);
-});
+$(document).on("DOMNodeInserted", "#bergen-button", function () {
+  $(this).click(function () {
+    hotelMap(winterLocations[3].lat, winterLocations[3].lng);
+  });
 });
 
-$(document).on("DOMNodeInserted", "#galway-button", function() {
-$(this).click(function () {
-  hotelMap(foodLocations[3].lat, foodLocations[3].lng);
+$(document).on("DOMNodeInserted", "#riga-button", function () {
+  $(this).click(function () {
+    hotelMap(cityLocations[0].lat, cityLocations[0].lng);
+  });
 });
+
+$(document).on("DOMNodeInserted", "#gdansk-button", function () {
+  $(this).click(function () {
+    hotelMap(cityLocations[1].lat, cityLocations[1].lng);
+  });
+});
+
+$(document).on("DOMNodeInserted", "#bruges-button", function () {
+  $(this).click(function () {
+    hotelMap(cityLocations[2].lat, cityLocations[2].lng);
+  });
+});
+
+$(document).on("DOMNodeInserted", "#porto-button", function () {
+  $(this).click(function () {
+    hotelMap(cityLocations[3].lat, cityLocations[3].lng);
+  });
+});
+
+$(document).on("DOMNodeInserted", "#palermo-button", function () {
+  $(this).click(function () {
+    hotelMap(foodLocations[0].lat, foodLocations[0].lng);
+  });
+});
+
+$(document).on("DOMNodeInserted", "#naples-button", function () {
+  $(this).click(function () {
+    hotelMap(foodLocations[1].lat, foodLocations[1].lng);
+  });
+});
+
+$(document).on("DOMNodeInserted", "#lille-button", function () {
+  $(this).click(function () {
+    hotelMap(foodLocations[2].lat, foodLocations[2].lng);
+  });
+});
+
+$(document).on("DOMNodeInserted", "#galway-button", function () {
+  $(this).click(function () {
+    hotelMap(foodLocations[3].lat, foodLocations[3].lng);
+  });
 });

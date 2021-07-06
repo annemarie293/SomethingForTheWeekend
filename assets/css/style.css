@@ -242,13 +242,13 @@ footer {
 
 
 /*------------------------------Destinations buttons section-----------------*/
-.destinations-intro-text{
+.destinations-section-text{
     color: #00205b;
     margin: 0 auto;
     text-align: center;
 }
 
-.destinations-intro-buttons{
+.destinations-section-buttons{
     margin: 0 auto;
 }
 
@@ -368,9 +368,22 @@ footer {
     text-align: center;
 }
 
+/*----------------------------------------------------------------Locations section-----------------*/
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
 /*---------------------------------Locations map section-----------------*/
-#location-map{
+#location-map, 
+#location-information{
     height: 400px;
     max-width:100%;
     margin:0 auto;
+   
 }
+
