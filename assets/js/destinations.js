@@ -1,5 +1,5 @@
 function initMap() {
-  const map = new google.maps.Map(document.getElementById("google-map"), {
+  const map = new google.maps.Map(document.getElementById("destination-map"), {
     zoom: 2.5,
     center: {
       lat: 48.91473349834997,
@@ -93,7 +93,7 @@ const foodLocations = [{
 
 // function to add marker locations on google map for the selection destinaation group
 function markMap(markerLocations) {
-  const map = new google.maps.Map(document.getElementById("google-map"), {
+  const map = new google.maps.Map(document.getElementById("destination-map"), {
     zoom: 2.5,
     center: {
       lat: 48.91473349834997,
@@ -318,7 +318,7 @@ $(document).on("DOMNodeInserted", "#palermo-button", function () {
     showHiddenSection();
     hotelMap(foodLocations[0].lat, foodLocations[0].lng);
     $("#location-name").html("palermo");
-    $("#location-image").attr("src","assets/images/palermo.jpeg").attr("alt","image of palermo");
+    $("#location-image").attr("src","assets/images/palermo.jpg").attr("alt","image of palermo");
   });
 });
 

@@ -4,6 +4,12 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/*-------remove blue outline from all bootstrap buttons---------*/
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
 /*----------------------------------------------------------------HEADER-FOOTER ALL PAGES--------------------*/
 
 /*----------------------------------------------------------------NavBar--------------------*/
@@ -151,6 +157,7 @@ footer {
 .hero-image-text h2 {
     text-align: center;
     padding-top: 25px;
+    vertical-align: middle;
 }
 
 .hero-image-button-one {
@@ -161,6 +168,7 @@ footer {
     text-align: center;
     background-color: #00205b;
     color: #ffffff;
+    outline: none;
 }
 
 .hero-image-button-one:hover {
@@ -172,6 +180,7 @@ footer {
     margin-bottom: 10px;
     text-align: center;
     background-color: #00205b;
+    outline: nones;
     
 }
 
@@ -333,15 +342,15 @@ footer {
 
 
 
-/*----------------------------------------Google map section-----------------*/
+/*------------------------------------------------Destination Map section-----------------*/
 
-.google-map-header{
+.destination-map-header{
     color: #00205b;
     text-align: center;
     margin: 0 auto;
 
 }
-#google-map{
+#destination-map{
     
     height: 400px;
     width:100%;
@@ -374,10 +383,6 @@ footer {
     display: none;
 }
 
-.show{
-    display: block;
-}
-
 /*---------------------------------Locations map section-----------------*/
 #location-map, 
 #location-information{
@@ -388,7 +393,8 @@ footer {
     max-width:100%;
 }
 
-#location-name{
+#location-name,
+#location-map-heading{
     font-weight: 700;
     text-transform: uppercase;
     color: #00205b;
