@@ -382,8 +382,28 @@ footer {
 #location-map, 
 #location-information{
     height: 400px;
-    max-width:100%;
     margin:0 auto;
-   
 }
+#location-map{
+    max-width:100%;
+}
+
+#location-name{
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #00205b;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#location-image{
+    background-color: #FB9489;
+    height: 250px;
+    width: 400px;
+    margin: 0 auto;
+    color: #ffffff;
+    display: block;
+    
+}
+
 
