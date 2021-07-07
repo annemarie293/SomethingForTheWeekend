@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>SFTW</title>
 </head>
+
+
 <body>
 
- <header>
+    <!-- --------------------------------------------------------------------Header Section ----->
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="assets/images/nav-logo.png"
@@ -37,20 +42,120 @@
         </nav>
     </header>
 
+    <!-- --------------------------------------------------------------------Form Section ----->
+
+    <section>
+        <div id="itinerary-intro" class="m-2 p-3 text-center">
+            <h2>Looking for a personalised itinerary?</h2>
+            <p>We can provide you a detailed travel plan based on your destination and requests. Take the hassle out of
+                organising your trip and let us share our favourite hotels, restaurants and sights that you won't want
+                to miss. Just fill in your details below and we'll email you a personalised travel itinerary within 24
+                hours.</p>
+        </div>
+        <div id="itinerary-form" class="container-fluid">
+            <form action="POST">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="row text-center m-2">
+                            <h4 class="mt-2">Contact Details</h4>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col-md-6 text-centerv mb-2">
+                                <input class="form-textbox form-control" type="text" placeholder="First name"
+                                    name="firstname" required>
+                            </div>
+                            <div class="col-md-6 text-center mb-2">
+                                <input class="form-textbox form-control" type="text" placeholder="Last name"
+                                    name="lastname" required>
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col-md-6 text-center text-md-start">
+                                <input class="form-textbox form-control" type="text" placeholder="Phone Number"
+                                    name="phone" required>
+                            </div>
+                            <div class="col-md-6 text-center text-md-end">
+                                <input class="form-textbox form-control" type="email" placeholder="Email Address"
+                                    name="email" required>
+                            </div>
+                            <div class="row text-center m-2">
+                                <h4 class="mt-2">Destination</h4>
+                                <select name="destination" id="destination"
+                                    class="form-textbox form-control text-center" required>
+                                    <option value="">Choose</option>
+                                    <option value="arcachon">Arcachon</option>
+                                    <option value="madeira">Madeira</option>
+                                    <option value="ischia">Ischia</option>
+                                    <option value="skiathos">Skiathos</option>
+                                    <option value="budapest">Budapest</option>
+                                    <option value="hallstatt">Hallstatt</option>
+                                    <option value="tallinn">Tallinn</option>
+                                    <option value="bergen">Bergen</option>
+                                    <option value="riga">Riga</option>
+                                    <option value="gdansk">Gdansk</option>
+                                    <option value="bruges">Bruges</option>
+                                    <option value="porto">Porto</option>
+                                    <option value="palermo">Palermo</option>
+                                    <option value="naples">Naples</option>
+                                    <option value="lille">Lille</option>
+                                    <option value="galway">Galway</option>
+                                </select>
+                            </div>
+                            <div class="row text-center m-2">
+                                <h4 class="mt-2">Passengers</h4>
+                            </div>
+                            <div class="row m-2">
+                                <div class="col-6 text-center">
+                                    <input class="form-textbox form-control" type="number" placeholder="Adults"
+                                        name="adults" required>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <input class="form-textbox form-control" type="number" placeholder="Children"
+                                        name="children" required>
+                                </div>
+                                <div class="row text-center m-2">
+                                    <h4 class="mt-2">Trip Duration</h4>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <label for="start-date">
+                                        From:
+                                    </label>
+                                    <input type="date" id="start-date" class="form-textbox form-control" name="start-date"
+                                        required>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <label for="end-date">
+                                        To:
+                                    </label>
+                                    <input type="date" id="end-date" class="form-textbox form-control" name="end-date"
+                                        required>
+                                </div>
+                                <div class="row text-center m-2">
+                                    <h4 class="mt-2">Additional info/Special request</h4>
+                                </div>
+                                <textarea id="details" class="form-textbox form-control m-2" name="details" rows="7"
+                                cols="50" style="max-width:100%">
+                                </textarea>
+                            </div>
+                        </div>
+            </form>
+        </div>
+
+    </section>
     <!-- Footer Section  -->
 
     <footer class="bottom-0 pb-1">
         <div class="container-fluid">
             <div class="row">
-                <div class="col" id="logo-footer">
+                <div class="col-6" id="logo-footer">
 
                     <img src="assets/images/nav-logo.png"
                         alt="Logo of airplane and website name 'something for the Weekend'">
 
                 </div>
-                <div class="col" id="social-links-footer">
+                <div class="col-6" id="social-links-footer">
                     <ul class="list-inline social-links float-end">
-                        <li class="list-inline-item  float-end">
+                        <li class="list-inline-item float-end">
                             <a target="_blank" href="https://instagram.com"><i class="fab fa-instagram-square"></i></a>
                         </li>
                         <li class="list-inline-item float-end">
@@ -67,7 +172,10 @@
             </div>
         </div>
     </footer>
- 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
