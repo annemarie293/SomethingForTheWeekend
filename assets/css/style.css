@@ -417,3 +417,11 @@ footer {
 #itinerary-intro{
     color: #00205b;
 }
+
+#submit-button{
+    color: #ffffff;
+    background-color: #00205b;
+}
+form h4{
+    border-bottom: 2px solid #FB9489;
+}
