@@ -6,10 +6,11 @@ window.onload = function() {
         emailjs.sendForm("service_r5f1ryo", "sftw", "#itinerary-form" )
             .then(function() {
                 console.log('SUCCESS!');
-                alert("Thanks for your request submission!");
+                $("#itinerary-form").addClass("hide");
+                $("#form-submit-message").html("<h4>Thanks for sumitting your itinerary request, we will send you on your completed trip plan by email very soon!</h4>");
             }, function(error) {
                 console.log('FAILED...', error);
-                alert("TWhoops! something went wrong, please try again");
+                alert("Whoops! something went wrong, please try again");
             });
     });
 }

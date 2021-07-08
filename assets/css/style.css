@@ -149,7 +149,7 @@ footer {
     color: #00205b;
     position: absolute;
     top: 25%;
-    background-color: rgba(251, 148, 137, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5%;
     height: 250px;
 }
@@ -424,4 +424,9 @@ footer {
 }
 form h4{
     border-bottom: 2px solid #FB9489;
+}
+
+#form-submit-message{
+    color: #00205b;
+    text-align: center;
 }
