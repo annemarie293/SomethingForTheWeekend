@@ -414,6 +414,10 @@ footer {
 
 /*-----------------------------------------------------------------------ITINERARY PAGE--------------------*/
 
+#itinerary-page{
+    min-height: 80vh;
+}
+
 #itinerary-intro{
     color: #00205b;
 }
