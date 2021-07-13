@@ -18,80 +18,96 @@ function initMap() {
 const summerLocations = [{
   name: "Arcachon",
   lat: 44.66429443582841,
-  lng: -1.168633501916241
+  lng: -1.168633501916241, 
+  info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }, {
   name: "Madeira",
   lat: 32.74883604648389,
-  lng: -17.016760364644416
+  lng: -17.016760364644416,
+  info:""
 }, {
   name: "Ischia",
   lat: 40.72954943271221,
-  lng: 13.90233479680736
+  lng: 13.90233479680736,
+  info:""
 }, {
   name: "Skiathos",
   lat: 39.16658699888563,
-  lng: 23.49052776734702
+  lng: 23.49052776734702,
+  info:""
 }]
 
 const winterLocations = [{
   name: "Budapest",
   lat: 47.497692312534895,
-  lng: 19.045855728245087
+  lng: 19.045855728245087,
+  info:""
 }, {
   name: "Hallstatt",
   lat: 47.56213795746026,
-  lng: 13.649767558157125
+  lng: 13.649767558157125,
+  info:""
 }, {
   name: "Tallinn",
   lat: 59.43563118854086,
-  lng: 24.748617012494904
+  lng: 24.748617012494904,
+  info:""
 }, {
   name: "Bergen",
   lat: 60.392541530778836,
-  lng: 5.313284628475543
+  lng: 5.313284628475543,
+  info:""
 }]
 
 const cityLocations = [{
   name: "Riga",
   lat: 56.94556321585074,
-  lng: 24.099631260635515
+  lng: 24.099631260635515,
+  info:""
 }, {
   name: "Gdansk",
   lat: 54.352003211456925,
-  lng: 18.646076073493834
+  lng: 18.,
+  info:""
 }, {
   name: "Bruges",
   lat: 51.20933380920364,
-  lng: 3.2244522911872426
+  lng: 3.2244522911872426,
+  info:""
 }, {
   name: "Porto",
   lat: 41.15756719382757,
-  lng: -8.629376466149939
+  lng: -8.629376466149939,
+  info:""
 }]
 
 const foodLocations = [{
     name: "Palermo",
     lat: 38.1148661348203,
-    lng: 13.357973304272855
+    lng: 13.357973304272855,
+    info:""
   },
   {
     name: "Naples",
     lat: 40.85170745896896,
-    lng: 14.265719186192603
+    lng: 14.265719186192603,
+    info:""
   },
   {
     name: "Lille",
     lat: 50.62942892254915,
-    lng: 3.057803058306979
+    lng: 3.057803058306979,
+    info:""
   },
   {
     name: "Galway",
     lat: 53.27063598265032,
-    lng: -9.057232068160024
+    lng: -9.057232068160024,
+    info:""
   }
 ]
 
-// function to add marker locations on google map for the selection destinaation group
+// function to add marker locations on destination map for the selection destination group
 function markMap(markerLocations) {
   const map = new google.maps.Map(document.getElementById("destination-map"), {
     zoom: 2.5,
@@ -123,7 +139,7 @@ function destinationButtonActiveSwitch(buttonID) {
   $(buttonID).removeClass("destination-button").addClass("destination-button-active");
 }
 
-//scripts to add location markers to map and highlight destination type button once selected
+//scripts to add location markers to destination map and highlight destination type button once selected
 $("#summer-button").click(function () {
   var buttonID = $("#summer-button");
   destinationButtonActiveSwitch(buttonID);
@@ -198,19 +214,21 @@ function addPlaces(places, map) {
   }
 }
 
-// to remove hidden class from loactions section on click on location button
+
+// To remove hidden class from locations section on click of any location button
 
 function showHiddenSection() {
   $(".hide").removeClass("hide");
 }
 
-// click function for each location button
+// on-click function for each location button
 $(document).on("DOMNodeInserted", "#arcachon-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap((summerLocations[0].lat), (summerLocations[0].lng));
-    $("#location-name").html("Arcachon");
+    $("#location-name").html(summerLocations[0].name);
     $("#location-image").attr("src","assets/images/arcachon.jpeg").attr("alt","image of arcachon");
+    $("#location-info").html(summerLocations[0].info);
   });
 });
 
@@ -218,8 +236,9 @@ $(document).on("DOMNodeInserted", "#madeira-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap((summerLocations[1].lat), (summerLocations[1].lng));
-    $("#location-name").html("madeira");
+    $("#location-name").html(summerLocations[1].name);
     $("#location-image").attr("src","assets/images/madeira.jpeg").attr("alt","image of madeira");
+    $("#location-info").html(summerLocations[1].info);
   });
 });
 
@@ -227,8 +246,9 @@ $(document).on("DOMNodeInserted", "#ischia-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(summerLocations[2].lat, summerLocations[2].lng);
-    $("#location-name").html("ischia");
+    $("#location-name").html(summerLocations[2].name);
     $("#location-image").attr("src","assets/images/ischia.jpeg").attr("alt","image of ischia");
+    $("#location-info").html(summerLocations[2].info);
   });
 });
 
@@ -236,8 +256,9 @@ $(document).on("DOMNodeInserted", "#skiathos-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(summerLocations[3].lat, summerLocations[3].lng);
-    $("#location-name").html("skiathos");
+    $("#location-name").html(summerLocations[3].name);
     $("#location-image").attr("src","assets/images/skiathos.jpg").attr("alt","image of skiathos");
+    $("#location-info").html(summerLocations[3].info);
   });
 });
 
@@ -245,8 +266,9 @@ $(document).on("DOMNodeInserted", "#budapest-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(winterLocations[0].lat, winterLocations[0].lng);
-    $("#location-name").html("budapest");
+    $("#location-name").html(winterLocations[0].name);
     $("#location-image").attr("src","assets/images/budapest.jpeg").attr("alt","image of budapest");
+    $("#location-info").html(winterLocations[0].info);
   });
 });
 
@@ -254,8 +276,9 @@ $(document).on("DOMNodeInserted", "#hallstatt-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(winterLocations[1].lat, winterLocations[1].lng);
-    $("#location-name").html("hallstatt");
+    $("#location-name").html(winterLocations[1].name);
     $("#location-image").attr("src","assets/images/hallstatt.jpg").attr("alt","image of hallstatt");
+    $("#location-info").html(winterLocations[1].info);
   });
 });
 
@@ -263,8 +286,9 @@ $(document).on("DOMNodeInserted", "#tallinn-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(winterLocations[2].lat, winterLocations[2].lng);
-    $("#location-name").html("tallinn");
+    $("#location-name").html(winterLocations[2].name);
     $("#location-image").attr("src","assets/images/tallinn.jpg").attr("alt","image of tallinn");
+    $("#location-info").html(winterLocations[2].info);
   });
 });
 
@@ -272,8 +296,9 @@ $(document).on("DOMNodeInserted", "#bergen-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(winterLocations[3].lat, winterLocations[3].lng);
-    $("#location-name").html("bergen");
+    $("#location-name").html(winterLocations[3].name);
     $("#location-image").attr("src","assets/images/bergen.jpeg").attr("alt","image of bergen");
+    $("#location-info").html(winterLocations[3].info);
   });
 });
 
@@ -281,8 +306,9 @@ $(document).on("DOMNodeInserted", "#riga-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(cityLocations[0].lat, cityLocations[0].lng);
-    $("#location-name").html("riga");
+    $("#location-name").html(cityLocations[0].name);
     $("#location-image").attr("src","assets/images/riga.jpeg").attr("alt","image of riga");
+    $("#location-info").html(cityLocations[0].info);
   });
 });
 
@@ -290,8 +316,9 @@ $(document).on("DOMNodeInserted", "#gdansk-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(cityLocations[1].lat, cityLocations[1].lng);
-    $("#location-name").html("gdansk");
+    $("#location-name").html(cityLocations[1].name);
     $("#location-image").attr("src","assets/images/gdansk.jpeg").attr("alt","image of gdansk");
+    $("#location-info").html(cityLocations[1].info);
   });
 });
 
@@ -299,8 +326,9 @@ $(document).on("DOMNodeInserted", "#bruges-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(cityLocations[2].lat, cityLocations[2].lng);
-    $("#location-name").html("bruges");
+    $("#location-name").html(cityLocations[2].name);
     $("#location-image").attr("src","assets/images/bruges.jpeg").attr("alt","image of bruges");
+    $("#location-info").html(cityLocations[2].info);
   });
 });
 
@@ -308,8 +336,9 @@ $(document).on("DOMNodeInserted", "#porto-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(cityLocations[3].lat, cityLocations[3].lng);
-    $("#location-name").html("porto");
+    $("#location-name").html(cityLocations[3].name);
     $("#location-image").attr("src","assets/images/porto.jpeg").attr("alt","image of porto");
+    $("#location-info").html(cityLocations[3].info);
   });
 });
 
@@ -317,8 +346,9 @@ $(document).on("DOMNodeInserted", "#palermo-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(foodLocations[0].lat, foodLocations[0].lng);
-    $("#location-name").html("palermo");
+    $("#location-name").html(foodLocations[0].name);
     $("#location-image").attr("src","assets/images/palermo.jpg").attr("alt","image of palermo");
+    $("#location-info").html(foodLocations[0].info);
   });
 });
 
@@ -326,8 +356,9 @@ $(document).on("DOMNodeInserted", "#naples-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(foodLocations[1].lat, foodLocations[1].lng);
-    $("#location-name").html("naples");
+    $("#location-name").html(foodLocations[1].name);
     $("#location-image").attr("src","assets/images/naples.jpg").attr("alt","image of naples");
+    $("#location-info").html(foodLocations[1].info);
   });
 });
 
@@ -335,8 +366,9 @@ $(document).on("DOMNodeInserted", "#lille-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(foodLocations[2].lat, foodLocations[2].lng);
-    $("#location-name").html("lille");
+    $("#location-name").html(foodLocations[2].name);
     $("#location-image").attr("src","assets/images/lille.jpg").attr("alt","image of lille");
+    $("#location-info").html(foodLocations[2].info);
   });
 });
 
@@ -344,7 +376,8 @@ $(document).on("DOMNodeInserted", "#galway-button", function () {
   $(this).click(function () {
     showHiddenSection();
     hotelMap(foodLocations[3].lat, foodLocations[3].lng);
-    $("#location-name").html("galway");
+    $("#location-name").html(foodLocations[3].name);
     $("#location-image").attr("src","assets/images/galway.jpg").attr("alt","image of galway");
+    $("#location-info").html(foodLocations[3].info);
   });
 });
