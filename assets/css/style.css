@@ -320,6 +320,12 @@ footer {
     color:#FB9489;
     border: 2px solid #00205b;
     text-align: center;
+    width: 115px;
+    transition: 0.3s;
+}
+
+.location-button-selected:hover{
+    background-color: #ffffff;
 }
 
 /*----------------------------------------------------------------Locations section-----------------*/

@@ -198,7 +198,58 @@ function hotelMap(lat, lng) {
     }
   );
 }
-//Function to add hotel markers on to the city map of the selected location
+
+//Function to search for nearby restaurants in the selected location
+function restaurantMap(lat, lng) {
+
+  const location = new google.maps.LatLng(lat, lng);
+  //infowindow = new google.maps.InfoWindow();
+  const map2 = new google.maps.Map(document.getElementById("location-map"), {
+    center: location,
+    zoom: 14,
+  });
+  // Create the places service.
+  const service = new google.maps.places.PlacesService(map2);
+
+  // Perform a nearby search.
+  service.nearbySearch({
+      location: location,
+      radius: 10000,
+      type: "restaurant"
+    },
+    (results, status) => {
+      if (status !== "OK" || !results) return;
+      addPlaces(results, map2);
+    }
+  );
+}
+
+//Function to search for nearby sights in the selected location
+function sightsMap(lat, lng) {
+
+  const location = new google.maps.LatLng(lat, lng);
+  //infowindow = new google.maps.InfoWindow();
+  const map2 = new google.maps.Map(document.getElementById("location-map"), {
+    center: location,
+    zoom: 14,
+  });
+  // Create the places service.
+  const service = new google.maps.places.PlacesService(map2);
+
+  // Perform a nearby search.
+  service.nearbySearch({
+      location: location,
+      radius: 10000,
+      type: "tourist_attraction"
+    },
+    (results, status) => {
+      if (status !== "OK" || !results) return;
+      addPlaces(results, map2);
+    }
+  );
+}
+
+//Function to add markers on to the city map of the selected location
 function addPlaces(places, map) {
   for (const place of places) {
     if (!place.geometry || !place.geometry.location) return;
@@ -221,20 +272,30 @@ function showHiddenSection() {
   $(".hide").removeClass("hide");
 }
 
-// on-click function for each location button
+// To add CSS class for selected location to the location button, and remove this class from previous selected button
+function selectedLocation(button){
+  $(".location-button-selected").removeClass("location-button-selected").addClass("location-button");
+  $(button).removeClass("location-button").addClass("location-button-selected"); 
+}
+
+// on-click function for each location button to display location information section + map with markers
+
 $(document).on("DOMNodeInserted", "#arcachon-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    hotelMap((summerLocations[0].lat), (summerLocations[0].lng));
+    selectedLocation("#arcachon-button"); 
+    hotelMap((summerLocations[0].lat), (summerLocations[0].lng),);
     $("#location-name").html(summerLocations[0].name);
     $("#location-image").attr("src","assets/images/arcachon.jpeg").attr("alt","image of arcachon");
     $("#location-text").html(summerLocations[0].text);
+    
   });
 });
 
 $(document).on("DOMNodeInserted", "#madeira-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation("#madeira-button"); 
     hotelMap((summerLocations[1].lat), (summerLocations[1].lng));
     $("#location-name").html(summerLocations[1].name);
     $("#location-image").attr("src","assets/images/madeira.jpeg").attr("alt","image of madeira");
@@ -245,6 +306,7 @@ $(document).on("DOMNodeInserted", "#madeira-button", function () {
 $(document).on("DOMNodeInserted", "#ischia-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation("#ischia-button"); 
     hotelMap(summerLocations[2].lat, summerLocations[2].lng);
     $("#location-name").html(summerLocations[2].name);
     $("#location-image").attr("src","assets/images/ischia.jpeg").attr("alt","image of ischia");
@@ -255,16 +317,18 @@ $(document).on("DOMNodeInserted", "#ischia-button", function () {
 $(document).on("DOMNodeInserted", "#skiathos-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation("#skiathos-button"); 
     hotelMap(summerLocations[3].lat, summerLocations[3].lng);
     $("#location-name").html(summerLocations[3].name);
     $("#location-image").attr("src","assets/images/skiathos.jpg").attr("alt","image of skiathos");
-    $("#location-text").html(summerLocations[3].text);
+    $("#location-text").html(summerLocations[3].text); 
   });
 });
 
 $(document).on("DOMNodeInserted", "#budapest-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(winterLocations[0].lat, winterLocations[0].lng);
     $("#location-name").html(winterLocations[0].name);
     $("#location-image").attr("src","assets/images/budapest.jpeg").attr("alt","image of budapest");
@@ -275,6 +339,7 @@ $(document).on("DOMNodeInserted", "#budapest-button", function () {
 $(document).on("DOMNodeInserted", "#hallstatt-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(winterLocations[1].lat, winterLocations[1].lng);
     $("#location-name").html(winterLocations[1].name);
     $("#location-image").attr("src","assets/images/hallstatt.jpg").attr("alt","image of hallstatt");
@@ -285,6 +350,7 @@ $(document).on("DOMNodeInserted", "#hallstatt-button", function () {
 $(document).on("DOMNodeInserted", "#tallinn-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(winterLocations[2].lat, winterLocations[2].lng);
     $("#location-name").html(winterLocations[2].name);
     $("#location-image").attr("src","assets/images/tallinn.jpg").attr("alt","image of tallinn");
@@ -295,6 +361,7 @@ $(document).on("DOMNodeInserted", "#tallinn-button", function () {
 $(document).on("DOMNodeInserted", "#bergen-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(winterLocations[3].lat, winterLocations[3].lng);
     $("#location-name").html(winterLocations[3].name);
     $("#location-image").attr("src","assets/images/bergen.jpeg").attr("alt","image of bergen");
@@ -305,6 +372,7 @@ $(document).on("DOMNodeInserted", "#bergen-button", function () {
 $(document).on("DOMNodeInserted", "#riga-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(cityLocations[0].lat, cityLocations[0].lng);
     $("#location-name").html(cityLocations[0].name);
     $("#location-image").attr("src","assets/images/riga.jpeg").attr("alt","image of riga");
@@ -315,6 +383,7 @@ $(document).on("DOMNodeInserted", "#riga-button", function () {
 $(document).on("DOMNodeInserted", "#gdansk-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(cityLocations[1].lat, cityLocations[1].lng);
     $("#location-name").html(cityLocations[1].name);
     $("#location-image").attr("src","assets/images/gdansk.jpeg").attr("alt","image of gdansk");
@@ -325,6 +394,7 @@ $(document).on("DOMNodeInserted", "#gdansk-button", function () {
 $(document).on("DOMNodeInserted", "#bruges-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(cityLocations[2].lat, cityLocations[2].lng);
     $("#location-name").html(cityLocations[2].name);
     $("#location-image").attr("src","assets/images/bruges.jpeg").attr("alt","image of bruges");
@@ -335,6 +405,7 @@ $(document).on("DOMNodeInserted", "#bruges-button", function () {
 $(document).on("DOMNodeInserted", "#porto-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(cityLocations[3].lat, cityLocations[3].lng);
     $("#location-name").html(cityLocations[3].name);
     $("#location-image").attr("src","assets/images/porto.jpeg").attr("alt","image of porto");
@@ -345,6 +416,7 @@ $(document).on("DOMNodeInserted", "#porto-button", function () {
 $(document).on("DOMNodeInserted", "#palermo-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(foodLocations[0].lat, foodLocations[0].lng);
     $("#location-name").html(foodLocations[0].name);
     $("#location-image").attr("src","assets/images/palermo.jpg").attr("alt","image of palermo");
@@ -355,6 +427,7 @@ $(document).on("DOMNodeInserted", "#palermo-button", function () {
 $(document).on("DOMNodeInserted", "#naples-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(foodLocations[1].lat, foodLocations[1].lng);
     $("#location-name").html(foodLocations[1].name);
     $("#location-image").attr("src","assets/images/naples.jpg").attr("alt","image of naples");
@@ -365,6 +438,7 @@ $(document).on("DOMNodeInserted", "#naples-button", function () {
 $(document).on("DOMNodeInserted", "#lille-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(foodLocations[2].lat, foodLocations[2].lng);
     $("#location-name").html(foodLocations[2].name);
     $("#location-image").attr("src","assets/images/lille.jpg").attr("alt","image of lille");
@@ -375,9 +449,73 @@ $(document).on("DOMNodeInserted", "#lille-button", function () {
 $(document).on("DOMNodeInserted", "#galway-button", function () {
   $(this).click(function () {
     showHiddenSection();
+    selectedLocation(); 
     hotelMap(foodLocations[3].lat, foodLocations[3].lng);
     $("#location-name").html(foodLocations[3].name);
     $("#location-image").attr("src","assets/images/galway.jpg").attr("alt","image of galway");
-    $("#location-text").html(foodLocations[3].text).addClass("content-height");
+    $("#location-text").html(foodLocations[3].text);
   });
+});
+
+
+// on-click function for each places button to display selected markers for the displayed location
+
+//Hotel Button
+
+$("#hotel-button").click(function () {
+  var locationName= $("#location-name").innerHTML;
+  console.log(locationName);
+
+  if (locationName == "Arcachon"){
+    console.log(summerLocations[0].name);
+    hotelMap(summerLocations[0].lat, summerLocations[0].lng);
+  }
+  else if ($("#location-name")==summerLocations[1].name){
+    hotelMap(summerLocations[1].lat, summerLocations[1].lng);
+  }
+  else if ($("#location-name")==summerLocations[2].name){
+    hotelMap(summerLocations[2].lat, summerLocations[2].lng);
+  }
+  else if ($("#location-name")==summerLocations[3].name){
+    hotelMap(summerLocations[3].lat, summerLocations[3].lng);
+  }
+  else if ($("#location-name")==winterLocations[0].name){
+    hotelMap(winterLocations[0].lat, winterLocations[0].lng);
+  }
+  else if ($("#location-name")==winterLocations[1].name){
+    hotelMap(winterLocations[1].lat, winterLocations[1].lng);
+  }
+  else if ($("#location-name")==winterLocations[2].name){
+    hotelMap(winterLocations[2].lat, winterLocations[2].lng);
+  }
+  else if ($("#location-name").html==winterLocations[3].name){
+    hotelMap(winterLocations[3].lat, winterLocations[3].lng);
+  }
+  else if ($("#location-name").html==cityLocations[0].name){
+    hotelMap(cityLocations[0].lat, cityLocations[0].lng);
+  }
+  else if ($("#location-name").html==cityLocations[1].name){
+    hotelMap(cityLocations[1].lat, cityLocations[1].lng);
+  }
+  else if ($("#location-name").html==cityLocations[2].name){
+    hotelMap(cityLocations[2].lat, cityLocations[2].lng);
+  }
+  else if ($("#location-name").html==cityLocations[3].name){
+    hotelMap(cityLocations[3].lat, cityLocations[3].lng);
+  }
+  else if ($("#location-name").html==foodLocations[0].name){
+    hotelMap(foodLocations[0].lat, foodLocations[0].lng);
+  }
+  else if ($("#location-name").html==foodLocations[1].name){
+    hotelMap(foodLocations[1].lat, foodLocations[1].lng);
+  }
+  else if ($("#location-name").html==foodLocations[2].name){
+    hotelMap(foodLocations[2].lat, foodLocations[2].lng);
+  }
+  else {
+    hotelMap(foodLocations[3].lat, foodLocations[3].lng);
+  }
+
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
+  $(this).removeClass("places-button").addClass("places-button-selected");    
 });
