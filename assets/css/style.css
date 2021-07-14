@@ -149,47 +149,27 @@ footer {
     color: #00205b;
     position: absolute;
     top: 25%;
-    background-color: rgba(251, 148, 137, 0.7);
+    left:.5%;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5%;
-    height: 250px;
 }
 
-.hero-image-text h2 {
-    text-align: center;
-    padding-top: 25px;
-    vertical-align: middle;
-}
-
-.hero-image-button-one {
-    margin-left: 23%;
-    margin-bottom: 10px;
-    bottom: 0;
-    position: absolute;
-    text-align: center;
+.hero-image-button {
     background-color: #00205b;
     color: #ffffff;
-    outline: none;
 }
 
-.hero-image-button-one:hover {
+.hero-image-button:hover,
+.hero-image-button a:hover{
     color: #FB9489;
 }
 
-.hero-image-button-two {
-    margin-left: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: #00205b;
-    outline: nones;
-    
-}
-
-.hero-image-button-two a {
+.hero-image-button a {
     text-decoration: none;
     color: #ffffff;
 }
 
-/*----------Tablets and larger: Bigger Image + button ----------*/
+/*----------Tablets and larger screen: Bigger Image----------*/
 
 @media screen and (min-width: 700px) {
     .hero-image {
@@ -198,54 +178,19 @@ footer {
 }
 
 
-@media screen and (min-width: 1024px) {
-    .hero-image-button-one {
-    margin-left: 30%;
-    }
-    
-    .hero-image-button-two{
-        margin-left: 5%;
-    }
-
-    .hero-image-button-two a{
-        font-size: larger;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .hero-image-button-one {
-    margin-left: 35%;
-    }
-    
-    .hero-image-button-two{
-        margin-left: 20%;
-    }
-}
-
-
-/*----------smaller text for mobile----------*/
-@media screen and (max-width: 760px) {
-    .hero-image-text h2 {
-        font-size: 20px;
-    }
-
+@media only screen and (max-width: 1000px) and (min-width: 760px)  {
     .hero-image-text {
-        left: 27%;
-        width: 200px;
-    }
-
-    .hero-image-button-one{
-        margin-left: 13%;
+        width: 300px
     }
 }
 
-@media screen and (max-width: 320px) {
-
-    .hero-image-text {
-        left: 20%;
-        width: 200px;
+@media screen and (min-width: 2000px) {
+    .hero-image-text h2,
+    .hero-image-text button {
+       font-size: 50px;
     }
 }
+
 
 /*----------------------------------------------------------------DESTINATIONS PAGE--------------------*/
 
@@ -382,16 +327,12 @@ footer {
 .hide{
     display: none;
 }
+/*---------------------------------Locations info section-----------------*/
 
-/*---------------------------------Locations map section-----------------*/
-#location-map, 
-#location-information{
-    height: 400px;
-    margin:0 auto;
+#locations-section{
+    height: max-content;
 }
-#location-map{
-    max-width:100%;
-}
+
 
 #location-name,
 #location-map-heading{
@@ -402,17 +343,44 @@ footer {
     text-align: center;
 }
 
+
 #location-image{
     background-color: #FB9489;
-    height: 250px;
-    width: 400px;
+    height: 150px;
+    width: 275px;
     margin: 0 auto;
-    color: #ffffff;
-    display: block;
-    
+    display: block; 
 }
 
+/*---------- tablets ----------*/
+@media screen and (min-width: 750px) {
+    #location-image{
+        height: 200px;
+        width: 300px;
+    }
+}
+
+/*------- laptops and larger screens -----*/
+@media screen and (min-width: 1000px) {
+    #location-image{
+        height: 250px;
+        width: 450px;
+    }
+}
+
+/*---------------------------------------Locations map section-----------------*/
+#location-map{
+    height: 400px;
+    margin:0 auto;
+    max-width:100%;
+}
+
+
 /*-----------------------------------------------------------------------ITINERARY PAGE--------------------*/
+
+#itinerary-page{
+    min-height: 80vh;
+}
 
 #itinerary-intro{
     color: #00205b;
@@ -424,4 +392,9 @@ footer {
 }
 form h4{
     border-bottom: 2px solid #FB9489;
+}
+
+#form-submit-message{
+    color: #00205b;
+    text-align: center;
 }
