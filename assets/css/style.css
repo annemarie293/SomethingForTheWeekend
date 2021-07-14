@@ -149,7 +149,10 @@ footer {
     color: #00205b;
     position: absolute;
     top: 25%;
+<<<<<<< HEAD
     left:.5%;
+=======
+>>>>>>> 11b269c617d4c97d56e6b319de485934d21e2dcb
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5%;
 }
@@ -397,4 +400,8 @@ form h4{
 #form-submit-message{
     color: #00205b;
     text-align: center;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 11b269c617d4c97d56e6b319de485934d21e2dcb
