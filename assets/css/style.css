@@ -149,10 +149,7 @@ footer {
     color: #00205b;
     position: absolute;
     top: 25%;
-<<<<<<< HEAD
     left:.5%;
-=======
->>>>>>> 11b269c617d4c97d56e6b319de485934d21e2dcb
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5%;
 }
@@ -372,6 +369,29 @@ footer {
 }
 
 /*---------------------------------------Locations map section-----------------*/
+
+
+.places-button {
+    background-color: #00205b;
+    color:#ffffff;
+    text-align: center;
+    border: 2px solid #00205b;
+    transition: 0.3s;
+}
+
+.places-button:hover{
+    background-color: #FB9489;
+    border: 2px solid #FB9489;
+}
+
+.places-button-selected {
+    background-color: #FB9489;
+    color:#00205b;
+    border: 2px solid #FB9489;
+    text-align: center;
+    transition: 0.3s;
+}
+
 #location-map{
     height: 400px;
     margin:0 auto;
@@ -400,8 +420,4 @@ form h4{
 #form-submit-message{
     color: #00205b;
     text-align: center;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 11b269c617d4c97d56e6b319de485934d21e2dcb
