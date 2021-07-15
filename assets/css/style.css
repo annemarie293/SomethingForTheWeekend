@@ -386,8 +386,7 @@ footer {
 }
 
 .places-button:hover{
-    background-color: #FB9489;
-    border: 2px solid #FB9489;
+    color:#FB9489;
 }
 
 .places-button-selected {

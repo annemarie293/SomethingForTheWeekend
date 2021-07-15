@@ -66,8 +66,8 @@ const cityLocations = [{
   text:""
 }, {
   name: "Gdansk",
-  lat: 54.390124693792266,
-  lng: 18.61325243292161,
+  lat: 54.352053224094256, 
+  lng: 18.654229034703253,
   text:""
 }, {
   name: "Bruges",
@@ -181,7 +181,7 @@ function hotelMap(lat, lng) {
   //infowindow = new google.maps.InfoWindow();
   const map2 = new google.maps.Map(document.getElementById("location-map"), {
     center: location,
-    zoom: 14,
+    zoom: 13,
   });
   // Create the places service.
   const service = new google.maps.places.PlacesService(map2);
@@ -206,7 +206,7 @@ function restaurantMap(lat, lng) {
   //infowindow = new google.maps.InfoWindow();
   const map2 = new google.maps.Map(document.getElementById("location-map"), {
     center: location,
-    zoom: 14,
+    zoom: 13,
   });
   // Create the places service.
   const service = new google.maps.places.PlacesService(map2);
@@ -231,7 +231,7 @@ function sightsMap(lat, lng) {
   //infowindow = new google.maps.InfoWindow();
   const map2 = new google.maps.Map(document.getElementById("location-map"), {
     center: location,
-    zoom: 14,
+    zoom: 13,
   });
   // Create the places service.
   const service = new google.maps.places.PlacesService(map2);
@@ -278,6 +278,13 @@ function selectedLocation(button){
   $(button).removeClass("location-button").addClass("location-button-selected"); 
 }
 
+// To add CSS class for selected place to the place button, and remove this class from previous selected button
+function selectedPlace(button){
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button");
+  $(button).removeClass("places-button").addClass("places-button-selected");
+}
+
+
 // on-click function for each location button to display location information section + map with markers
 
 $(document).on("DOMNodeInserted", "#arcachon-button", function () {
@@ -285,6 +292,7 @@ $(document).on("DOMNodeInserted", "#arcachon-button", function () {
     showHiddenSection();
     selectedLocation("#arcachon-button"); 
     hotelMap((summerLocations[0].lat), (summerLocations[0].lng),);
+    selectedPlace("#hotel-button");
     $("#location-name").html(summerLocations[0].name);
     $("#location-image").attr("src","assets/images/arcachon.jpeg").attr("alt","image of arcachon");
     $("#location-text").html(summerLocations[0].text);
@@ -297,6 +305,7 @@ $(document).on("DOMNodeInserted", "#madeira-button", function () {
     showHiddenSection();
     selectedLocation("#madeira-button"); 
     hotelMap((summerLocations[1].lat), (summerLocations[1].lng));
+    selectedPlace("#hotel-button");
     $("#location-name").html(summerLocations[1].name);
     $("#location-image").attr("src","assets/images/madeira.jpeg").attr("alt","image of madeira");
     $("#location-text").html(summerLocations[1].text);
@@ -308,6 +317,7 @@ $(document).on("DOMNodeInserted", "#ischia-button", function () {
     showHiddenSection();
     selectedLocation("#ischia-button"); 
     hotelMap(summerLocations[2].lat, summerLocations[2].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(summerLocations[2].name);
     $("#location-image").attr("src","assets/images/ischia.jpeg").attr("alt","image of ischia");
     $("#location-text").html(summerLocations[2].text);
@@ -319,6 +329,7 @@ $(document).on("DOMNodeInserted", "#skiathos-button", function () {
     showHiddenSection();
     selectedLocation("#skiathos-button"); 
     hotelMap(summerLocations[3].lat, summerLocations[3].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(summerLocations[3].name);
     $("#location-image").attr("src","assets/images/skiathos.jpg").attr("alt","image of skiathos");
     $("#location-text").html(summerLocations[3].text); 
@@ -328,8 +339,9 @@ $(document).on("DOMNodeInserted", "#skiathos-button", function () {
 $(document).on("DOMNodeInserted", "#budapest-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#budapest-button"); 
     hotelMap(winterLocations[0].lat, winterLocations[0].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(winterLocations[0].name);
     $("#location-image").attr("src","assets/images/budapest.jpeg").attr("alt","image of budapest");
     $("#location-text").html(winterLocations[0].text);
@@ -339,8 +351,9 @@ $(document).on("DOMNodeInserted", "#budapest-button", function () {
 $(document).on("DOMNodeInserted", "#hallstatt-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#hallstatt-button"); 
     hotelMap(winterLocations[1].lat, winterLocations[1].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(winterLocations[1].name);
     $("#location-image").attr("src","assets/images/hallstatt.jpg").attr("alt","image of hallstatt");
     $("#location-text").html(winterLocations[1].text);
@@ -350,8 +363,9 @@ $(document).on("DOMNodeInserted", "#hallstatt-button", function () {
 $(document).on("DOMNodeInserted", "#tallinn-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#tallinn-button"); 
     hotelMap(winterLocations[2].lat, winterLocations[2].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(winterLocations[2].name);
     $("#location-image").attr("src","assets/images/tallinn.jpg").attr("alt","image of tallinn");
     $("#location-text").html(winterLocations[2].text);
@@ -361,8 +375,9 @@ $(document).on("DOMNodeInserted", "#tallinn-button", function () {
 $(document).on("DOMNodeInserted", "#bergen-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#bergen-button"); 
     hotelMap(winterLocations[3].lat, winterLocations[3].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(winterLocations[3].name);
     $("#location-image").attr("src","assets/images/bergen.jpeg").attr("alt","image of bergen");
     $("#location-text").html(winterLocations[3].text);
@@ -372,8 +387,9 @@ $(document).on("DOMNodeInserted", "#bergen-button", function () {
 $(document).on("DOMNodeInserted", "#riga-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#riga-button"); 
     hotelMap(cityLocations[0].lat, cityLocations[0].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(cityLocations[0].name);
     $("#location-image").attr("src","assets/images/riga.jpeg").attr("alt","image of riga");
     $("#location-text").html(cityLocations[0].text);
@@ -383,8 +399,9 @@ $(document).on("DOMNodeInserted", "#riga-button", function () {
 $(document).on("DOMNodeInserted", "#gdansk-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#gdansk-button"); 
     hotelMap(cityLocations[1].lat, cityLocations[1].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(cityLocations[1].name);
     $("#location-image").attr("src","assets/images/gdansk.jpeg").attr("alt","image of gdansk");
     $("#location-text").html(cityLocations[1].text);
@@ -394,8 +411,9 @@ $(document).on("DOMNodeInserted", "#gdansk-button", function () {
 $(document).on("DOMNodeInserted", "#bruges-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#bruges-button"); 
     hotelMap(cityLocations[2].lat, cityLocations[2].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(cityLocations[2].name);
     $("#location-image").attr("src","assets/images/bruges.jpeg").attr("alt","image of bruges");
     $("#location-text").html(cityLocations[2].text);
@@ -405,8 +423,9 @@ $(document).on("DOMNodeInserted", "#bruges-button", function () {
 $(document).on("DOMNodeInserted", "#porto-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#porto-button"); 
     hotelMap(cityLocations[3].lat, cityLocations[3].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(cityLocations[3].name);
     $("#location-image").attr("src","assets/images/porto.jpeg").attr("alt","image of porto");
     $("#location-text").html(cityLocations[3].text);
@@ -416,8 +435,9 @@ $(document).on("DOMNodeInserted", "#porto-button", function () {
 $(document).on("DOMNodeInserted", "#palermo-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#palermo-button"); 
     hotelMap(foodLocations[0].lat, foodLocations[0].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(foodLocations[0].name);
     $("#location-image").attr("src","assets/images/palermo.jpg").attr("alt","image of palermo");
     $("#location-text").html(foodLocations[0].text);
@@ -427,8 +447,9 @@ $(document).on("DOMNodeInserted", "#palermo-button", function () {
 $(document).on("DOMNodeInserted", "#naples-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#naples-button"); 
     hotelMap(foodLocations[1].lat, foodLocations[1].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(foodLocations[1].name);
     $("#location-image").attr("src","assets/images/naples.jpg").attr("alt","image of naples");
     $("#location-text").html(foodLocations[1].text);
@@ -438,8 +459,9 @@ $(document).on("DOMNodeInserted", "#naples-button", function () {
 $(document).on("DOMNodeInserted", "#lille-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#lille-button"); 
     hotelMap(foodLocations[2].lat, foodLocations[2].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(foodLocations[2].name);
     $("#location-image").attr("src","assets/images/lille.jpg").attr("alt","image of lille");
     $("#location-text").html(foodLocations[2].text);
@@ -449,8 +471,9 @@ $(document).on("DOMNodeInserted", "#lille-button", function () {
 $(document).on("DOMNodeInserted", "#galway-button", function () {
   $(this).click(function () {
     showHiddenSection();
-    selectedLocation(); 
+    selectedLocation("#galway-button"); 
     hotelMap(foodLocations[3].lat, foodLocations[3].lng);
+    selectedPlace("#hotel-button");
     $("#location-name").html(foodLocations[3].name);
     $("#location-image").attr("src","assets/images/galway.jpg").attr("alt","image of galway");
     $("#location-text").html(foodLocations[3].text);
@@ -463,57 +486,169 @@ $(document).on("DOMNodeInserted", "#galway-button", function () {
 //Hotel Button
 
 $("#hotel-button").click(function () {
-  var locationName= $("#location-name").innerHTML;
-  console.log(locationName);
-
-  if (locationName == "Arcachon"){
-    console.log(summerLocations[0].name);
+  
+  if ($("#arcachon-button").hasClass("location-button-selected")){
     hotelMap(summerLocations[0].lat, summerLocations[0].lng);
   }
-  else if ($("#location-name")==summerLocations[1].name){
+  else if ($("#madeira-button").hasClass("location-button-selected")){
     hotelMap(summerLocations[1].lat, summerLocations[1].lng);
   }
-  else if ($("#location-name")==summerLocations[2].name){
+  else if ($("#ischia-button").hasClass("location-button-selected")){
     hotelMap(summerLocations[2].lat, summerLocations[2].lng);
   }
-  else if ($("#location-name")==summerLocations[3].name){
+  else if ($("#skiathos-button").hasClass("location-button-selected")){
     hotelMap(summerLocations[3].lat, summerLocations[3].lng);
   }
-  else if ($("#location-name")==winterLocations[0].name){
+  else if ($("#budapest-button").hasClass("location-button-selected")){
     hotelMap(winterLocations[0].lat, winterLocations[0].lng);
   }
-  else if ($("#location-name")==winterLocations[1].name){
+  else if ($("#hallstatt-button").hasClass("location-button-selected")){
     hotelMap(winterLocations[1].lat, winterLocations[1].lng);
   }
-  else if ($("#location-name")==winterLocations[2].name){
+  else if ($("#tallinn-button").hasClass("location-button-selected")){
     hotelMap(winterLocations[2].lat, winterLocations[2].lng);
   }
-  else if ($("#location-name").html==winterLocations[3].name){
+  else if ($("#bergen-button").hasClass("location-button-selected")){
     hotelMap(winterLocations[3].lat, winterLocations[3].lng);
   }
-  else if ($("#location-name").html==cityLocations[0].name){
+  else if ($("#riga-button").hasClass("location-button-selected")){
     hotelMap(cityLocations[0].lat, cityLocations[0].lng);
   }
-  else if ($("#location-name").html==cityLocations[1].name){
+  else if ($("#gdansk-button").hasClass("location-button-selected")){
     hotelMap(cityLocations[1].lat, cityLocations[1].lng);
   }
-  else if ($("#location-name").html==cityLocations[2].name){
+  else if ($("#bruges-button").hasClass("location-button-selected")){
     hotelMap(cityLocations[2].lat, cityLocations[2].lng);
   }
-  else if ($("#location-name").html==cityLocations[3].name){
+  else if ($("#porto-button").hasClass("location-button-selected")){
     hotelMap(cityLocations[3].lat, cityLocations[3].lng);
   }
-  else if ($("#location-name").html==foodLocations[0].name){
+  else if ($("#palermo-button").hasClass("location-button-selected")){
     hotelMap(foodLocations[0].lat, foodLocations[0].lng);
   }
-  else if ($("#location-name").html==foodLocations[1].name){
+  else if ($("#naples-button").hasClass("location-button-selected")){
     hotelMap(foodLocations[1].lat, foodLocations[1].lng);
   }
-  else if ($("#location-name").html==foodLocations[2].name){
+  else if ($("#lille-button").hasClass("location-button-selected")){
     hotelMap(foodLocations[2].lat, foodLocations[2].lng);
   }
-  else {
+  else if ($("#galway-button").hasClass("location-button-selected")){
     hotelMap(foodLocations[3].lat, foodLocations[3].lng);
+  }
+
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
+  $(this).removeClass("places-button").addClass("places-button-selected");    
+});
+
+
+//Restaurant Button
+
+$("#restaurant-button").click(function () {
+  
+  if ($("#arcachon-button").hasClass("location-button-selected")){
+    restaurantMap(summerLocations[0].lat, summerLocations[0].lng);
+  }
+  else if ($("#madeira-button").hasClass("location-button-selected")){
+    restaurantMap(summerLocations[1].lat, summerLocations[1].lng);
+  }
+  else if ($("#ischia-button").hasClass("location-button-selected")){
+    restaurantMap(summerLocations[2].lat, summerLocations[2].lng);
+  }
+  else if ($("#skiathos-button").hasClass("location-button-selected")){
+    restaurantMap(summerLocations[3].lat, summerLocations[3].lng);
+  }
+  else if ($("#budapest-button").hasClass("location-button-selected")){
+    restaurantMap(winterLocations[0].lat, winterLocations[0].lng);
+  }
+  else if ($("#hallstatt-button").hasClass("location-button-selected")){
+    restaurantMap(winterLocations[1].lat, winterLocations[1].lng);
+  }
+  else if ($("#tallinn-button").hasClass("location-button-selected")){
+    restaurantMap(winterLocations[2].lat, winterLocations[2].lng);
+  }
+  else if ($("#bergen-button").hasClass("location-button-selected")){
+    restaurantMap(winterLocations[3].lat, winterLocations[3].lng);
+  }
+  else if ($("#riga-button").hasClass("location-button-selected")){
+    restaurantMap(cityLocations[0].lat, cityLocations[0].lng);
+  }
+  else if ($("#gdansk-button").hasClass("location-button-selected")){
+    restaurantMap(cityLocations[1].lat, cityLocations[1].lng);
+  }
+  else if ($("#bruges-button").hasClass("location-button-selected")){
+    restaurantMap(cityLocations[2].lat, cityLocations[2].lng);
+  }
+  else if ($("#porto-button").hasClass("location-button-selected")){
+    restaurantMap(cityLocations[3].lat, cityLocations[3].lng);
+  }
+  else if ($("#palermo-button").hasClass("location-button-selected")){
+    restaurantMap(foodLocations[0].lat, foodLocations[0].lng);
+  }
+  else if ($("#naples-button").hasClass("location-button-selected")){
+    restaurantMap(foodLocations[1].lat, foodLocations[1].lng);
+  }
+  else if ($("#lille-button").hasClass("location-button-selected")){
+    restaurantMap(foodLocations[2].lat, foodLocations[2].lng);
+  }
+  else if ($("#galway-button").hasClass("location-button-selected")){
+    restaurantMap(foodLocations[3].lat, foodLocations[3].lng);
+  }
+
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
+  $(this).removeClass("places-button").addClass("places-button-selected");    
+});
+
+//Sights Button
+
+$("#sights-button").click(function () {
+  
+  if ($("#arcachon-button").hasClass("location-button-selected")){
+    sightsMap(summerLocations[0].lat, summerLocations[0].lng);
+  }
+  else if ($("#madeira-button").hasClass("location-button-selected")){
+    sightsMap(summerLocations[1].lat, summerLocations[1].lng);
+  }
+  else if ($("#ischia-button").hasClass("location-button-selected")){
+    sightsMap(summerLocations[2].lat, summerLocations[2].lng);
+  }
+  else if ($("#skiathos-button").hasClass("location-button-selected")){
+    sightsMap(summerLocations[3].lat, summerLocations[3].lng);
+  }
+  else if ($("#budapest-button").hasClass("location-button-selected")){
+    sightsMap(winterLocations[0].lat, winterLocations[0].lng);
+  }
+  else if ($("#hallstatt-button").hasClass("location-button-selected")){
+    sightsMap(winterLocations[1].lat, winterLocations[1].lng);
+  }
+  else if ($("#tallinn-button").hasClass("location-button-selected")){
+    sightsMap(winterLocations[2].lat, winterLocations[2].lng);
+  }
+  else if ($("#bergen-button").hasClass("location-button-selected")){
+    sightsMap(winterLocations[3].lat, winterLocations[3].lng);
+  }
+  else if ($("#riga-button").hasClass("location-button-selected")){
+    sightsMap(cityLocations[0].lat, cityLocations[0].lng);
+  }
+  else if ($("#gdansk-button").hasClass("location-button-selected")){
+    sightsMap(cityLocations[1].lat, cityLocations[1].lng);
+  }
+  else if ($("#bruges-button").hasClass("location-button-selected")){
+    sightsMap(cityLocations[2].lat, cityLocations[2].lng);
+  }
+  else if ($("#porto-button").hasClass("location-button-selected")){
+    sightsMap(cityLocations[3].lat, cityLocations[3].lng);
+  }
+  else if ($("#palermo-button").hasClass("location-button-selected")){
+    sightsMap(foodLocations[0].lat, foodLocations[0].lng);
+  }
+  else if ($("#naples-button").hasClass("location-button-selected")){
+    sightsMap(foodLocations[1].lat, foodLocations[1].lng);
+  }
+  else if ($("#lille-button").hasClass("location-button-selected")){
+    sightsMap(foodLocations[2].lat, foodLocations[2].lng);
+  }
+  else if ($("#galway-button").hasClass("location-button-selected")){
+    sightsMap(foodLocations[3].lat, foodLocations[3].lng);
   }
 
   $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
