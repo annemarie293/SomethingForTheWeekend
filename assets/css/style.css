@@ -431,15 +431,20 @@ footer {
 }
 
 /*----------for places buttons on tables and very small screens--------------*/
-@media screen (max-width:750px) and (min-width:800px) {
-    .places-button {
+@media screen and (max-width:840px) and (min-width:760px) {
+    #hotel-button,
+    #restaurant-button,
+    #sights-button {
         padding: .3rem .8rem;
         font-size: 1.15rem;
+        
     }
 }
 
-@media screen (max-width:320px) {
-    .places-button {
+@media screen and (max-width:415px) {
+    #hotel-button,
+    #restaurant-button,
+    #sights-button {
         padding: .1rem .4rem;
         font-size: 1rem;
     }
