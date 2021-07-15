@@ -72,6 +72,18 @@ footer {
     width: 150px;
 }
 
+#logo-footer p{
+    color: #00205b;
+    margin: 0rem 0rem 0rem 2rem;
+    font-size: .4rem;
+}
+
+#copyright{
+    color: #ffffff;
+    font-size: .5rem;
+    padding-right: 1.5rem;
+}
+
 
 .social-links li a i {
     color: #00205b;
@@ -106,7 +118,7 @@ footer {
 @media screen and (min-width: 700px) {
     #logo-footer img {
         height: 50px;
-        width: 250px;
+        width: 275px;
     }
 
     .social-links li a i {
@@ -118,6 +130,16 @@ footer {
         margin-top: 10px;
     }
 
+    #logo-footer p{
+        margin: 0rem 0rem 0rem 3.8rem;
+        font-size: .8rem;
+    }
+    
+    #copyright {
+        font-size: .8rem;
+        padding-right: 1.5rem;
+    }
+
 }
 
 /*---------larger screens ---------*/
@@ -125,7 +147,12 @@ footer {
 @media (min-width: 1030px) {
     #logo-footer img {
         height: 50px;
-        width: 350px;
+        width: 325px;
+    }
+
+    #logo-footer p{
+        margin: 0rem 0rem 0rem 5rem;
+        font-size:.8rem;
     }
 }
 
