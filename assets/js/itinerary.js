@@ -7,14 +7,10 @@ window.onload = function() {
             .then(function() {
                 console.log('SUCCESS!');
                 $("#itinerary-form").addClass("hide");
-                $("#form-submit-message").html("<h4>Thanks for sumitting your itinerary request, we will send you on your completed trip plan by email very soon!</h4>");
+                $("#form-submit-message").html("<h4>Thanks for submitting your itinerary request, we will send you on your completed trip plan by email very soon!</h4>");
             }, function(error) {
                 console.log('FAILED...', error);
-<<<<<<< HEAD
                 alert("Whoops! Something went wrong, please try again");
-=======
-                alert("Whoops! something went wrong, please try again");
->>>>>>> 11b269c617d4c97d56e6b319de485934d21e2dcb
             });
     });
 }
