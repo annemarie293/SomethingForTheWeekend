@@ -400,6 +400,21 @@ footer {
     }
 }
 
+#location-text{
+    color: #00205b;
+}
+
+#itinerary-link{
+    background-color: #00205b;
+    border-radius: 5px;
+    max-width:80%;
+}
+
+#itinerary-link a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /*---------------------------------------Locations map section-----------------*/
 
 
