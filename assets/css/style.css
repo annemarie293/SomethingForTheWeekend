@@ -248,11 +248,11 @@ footer {
 
 .destination-button-active{
     background-color: rgba(0, 32, 91, 0.6);
+    color:#ffffff;
     height: 75px;
     display: block;
     margin: 3rem auto;
     border: 6px solid #FB9489;
-    color:#ffffff;
 }
 
 #summer-button-div {
@@ -299,6 +299,7 @@ footer {
         margin-top: 2rem;
         height: 65px;
         border: 6px solid #FB9489;
+        color:#ffffff;
     }
 }
 
