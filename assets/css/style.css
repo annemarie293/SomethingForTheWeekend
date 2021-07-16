@@ -163,7 +163,7 @@ footer {
 
 /*----------Default----------*/
 .hero-image {
-    background-image: url("../images/hero-image-small.jpg");
+    background-image: url("https://res.cloudinary.com/diljq6ppi/image/upload/v1626450594/hero-image-small_mfkuez.jpg");
     background-size: cover;
     height: 100vh;
     background-position: center;
@@ -200,7 +200,7 @@ footer {
 
 @media screen and (min-width: 700px) {
     .hero-image {
-        background-image: url("../images/hero-image.jpg");
+        background-image: url("https://res.cloudinary.com/diljq6ppi/image/upload/v1626450585/hero-image_tbgyjw.jpg");
     }
 }
 
@@ -243,6 +243,7 @@ footer {
     height: 75px;
     display: block;
     margin: 3rem auto;
+    color:#00205b;
 }
 
 .destination-button-active{
@@ -251,43 +252,32 @@ footer {
     display: block;
     margin: 3rem auto;
     border: 6px solid #FB9489;
-}
-
-
-.destination-button a{
-    text-decoration: none;
-    color:#00205b;
-}
-
-.destination-button-active a{
-    text-decoration: none;
     color:#ffffff;
 }
 
-
 #summer-button-div {
-    background-image: url("../images/summer.jpg");
+    background-image: url("https://res.cloudinary.com/diljq6ppi/image/upload/v1626450603/summer_i1uopb.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 #winter-button-div {
-    background-image: url("../images/winter.jpg");
+    background-image: url("https://res.cloudinary.com/diljq6ppi/image/upload/v1626450611/winter_n3x55q.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 #city-button-div {
-    background-image: url("../images/city.jpg");
+    background-image: url("https://res.cloudinary.com/diljq6ppi/image/upload/v1626450531/city_da1gug.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 #food-button-div {
-    background-image: url("../images/food.jpg");
+    background-image: url("https://res.cloudinary.com/diljq6ppi/image/upload/v1626450575/food_dxhcf0.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
