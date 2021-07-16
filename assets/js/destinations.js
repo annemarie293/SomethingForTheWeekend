@@ -35,7 +35,7 @@ const summerLocations = [{
   lat: 39.16314268526632, 
   lng: 23.49045709979414,
   text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-}]
+}];
 
 const winterLocations = [{
   name: "Budapest",
@@ -57,7 +57,7 @@ const winterLocations = [{
   lat: 60.392541530778836,
   lng: 5.313284628475543,
   text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-}]
+}];
 
 const cityLocations = [{
   name: "Riga",
@@ -79,7 +79,7 @@ const cityLocations = [{
   lat: 41.15756719382757,
   lng: -8.629376466149939,
   text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-}]
+}];
 
 const foodLocations = [{
     name: "Palermo",
@@ -104,13 +104,12 @@ const foodLocations = [{
     lat: 53.27063598265032,
     lng: -9.057232068160024,
     text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  }
-]
+  }];
 
 // function to add marker locations on destination map for the selection destination group
 function markMap(markerLocations) {
   const map = new google.maps.Map(document.getElementById("destination-map"), {
-    zoom: 2.5,
+    zoom: 3.5,
     center: {
       lat: 48.91473349834997,
       lng: 14.654953491288719
@@ -129,7 +128,7 @@ function markMap(markerLocations) {
 
   new MarkerClusterer(map, markers, {
     imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-  });;
+  });
 
 }
 
@@ -154,7 +153,7 @@ $("#winter-button").click(function () {
   markMap(winterLocations);
   $("#locations-section").addClass("hide");
   $("#location-buttons").html('<button type="button" id="budapest-button" class="location-button btn btn-lg">Budapest</button> <button type="button" id="hallstatt-button" class="location-button btn btn-lg">Hallstatt</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="tallinn-button" class="location-button btn btn-lg">Tallinn</button> <button type="button" id="bergen-button" class="location-button btn btn-lg">Bergen</button>');
-})
+});
 
 $("#city-button").click(function () {
   var buttonID = $("#city-button");
@@ -170,8 +169,7 @@ $("#food-button").click(function () {
   $("#locations-section").addClass("hide");
   markMap(foodLocations);
   $("#location-buttons").html('<button type="button" id="palermo-button" class="location-button btn btn-lg">Palermo</button> <button type="button" id="naples-button" class="location-button btn btn-lg">Naples</button> <div class="w-100 p-1 d-block d-md-none"></div> <button type="button" id="lille-button" class="location-button btn btn-lg">Lille</button> <button type="button" id="galway-button" class="location-button btn btn-lg">Galway</button>');
-
-})
+});
 
 
 //Function to search for nearby hotels in the selected location
@@ -536,7 +534,7 @@ $("#hotel-button").click(function () {
     hotelMap(foodLocations[3].lat, foodLocations[3].lng);
   }
 
-  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button");
   $(this).removeClass("places-button").addClass("places-button-selected");    
 });
 
@@ -594,7 +592,7 @@ $("#restaurant-button").click(function () {
     restaurantMap(foodLocations[3].lat, foodLocations[3].lng);
   }
 
-  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button");
   $(this).removeClass("places-button").addClass("places-button-selected");    
 });
 
@@ -651,6 +649,6 @@ $("#sights-button").click(function () {
     sightsMap(foodLocations[3].lat, foodLocations[3].lng);
   }
 
-  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button")
+  $(".places-button-selected").removeClass("places-button-selected").addClass("places-button");
   $(this).removeClass("places-button").addClass("places-button-selected");    
 });
