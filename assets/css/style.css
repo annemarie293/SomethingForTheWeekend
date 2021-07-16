@@ -246,6 +246,10 @@ footer {
     color:#00205b;
 }
 
+.destination-button h4{
+    color:#00205b;
+}
+
 .destination-button-active{
     background-color: rgba(0, 32, 91, 0.6);
     color:#ffffff;
@@ -253,6 +257,10 @@ footer {
     display: block;
     margin: 3rem auto;
     border: 6px solid #FB9489;
+}
+
+.destination-button-active h4{
+    color:#ffffff;
 }
 
 #summer-button-div {
