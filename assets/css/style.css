@@ -163,7 +163,7 @@ footer {
 
 /*----------Default----------*/
 .hero-image {
-    background-image: url("../assets/images/hero-image-small.jpg");
+    background-image: url("../images/hero-image-small.jpg");
     background-size: cover;
     height: 100vh;
     background-position: center;
@@ -200,7 +200,7 @@ footer {
 
 @media screen and (min-width: 700px) {
     .hero-image {
-        background-image: url("../assets/images/hero-image.jpg");
+        background-image: url("../images/hero-image.jpg");
     }
 }
 
@@ -256,28 +256,28 @@ footer {
 }
 
 #summer-button-div {
-    background-image: url("../assets/images/summer.jpg");
+    background-image: url("../images/summer.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 #winter-button-div {
-    background-image: url("../assets/images/winter.jpg");
+    background-image: url("../images/winter.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 #city-button-div {
-    background-image: url("../assets/images/city.jpg");
+    background-image: url("../images/city.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 #food-button-div {
-    background-image: url("../assets/images/food.jpg");
+    background-image: url("../images/food.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
