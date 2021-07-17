@@ -1,4 +1,5 @@
-console.log("working")
+/*jshint esversion: 6 */
+/*globals $:false */
 
 window.onload = function() {
     document.getElementById('itinerary-form').addEventListener('submit', function(event) {
@@ -13,4 +14,4 @@ window.onload = function() {
                 alert("Whoops! Something went wrong, please try again");
             });
     });
-}
+};

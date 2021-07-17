@@ -1,3 +1,7 @@
+/*jshint esversion: 6 */
+/*globals $:false */
+/*globals google:false */
+
 function initMap() {
   const map = new google.maps.Map(document.getElementById("destination-map"), {
     zoom: 2.5,
