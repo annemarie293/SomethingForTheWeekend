@@ -304,7 +304,7 @@ Testing was carried out by myself using Chrome DevTools while writing the code, 
 
 
 ### LIGHTHOUSE TESTING
-![Lighthouse Results]()
+![Lighthouse Results](assets/images/readme/lighthouse-final.jpg)
 #### Performance
 Initial score was in the mid-60s due to large image sizes and maps. Compressing the images greatly increased the performane speed. Remaining improvement option to "Eliminate render-blocking resources" refers to Bootstrap CDN which I can't remove.
 #### Accessibilty
