@@ -26,10 +26,10 @@ As the website is designed to be repeatedly used as a tool new user and return u
 
    - The site uses a light pink, white and navy blue colour scheme, designed to be bright and cheerful and inspirational of a summer travel theme. Most of the colours are restricted to navbar/footer and button elements so as not to overpower the destination images and maps.
    - Color shades were refined for best accessibility contrast using https://webaim.org/resources/contrastchecker/
-   - [Contrast-check blue on pink](/workspace/SomethingForTheWeekend/assets/images/readme/colour-checker-blue-on-pink.jpg)
-   - [Contrast-check blue on white](/workspace/SomethingForTheWeekend/assets/images/readme/colour-checker-blue-on-white.jpg)
-   - [Contrast-check pink on blue](/workspace/SomethingForTheWeekend/assets/images/readme/colour-checker-pink-on-blue.jpg)
-   - [Contrast-check white on blue](/workspace/SomethingForTheWeekend/assets/images/readme/colour-checker-pink-on-blue.jpg)
+   - ![Contrast-check blue on pink](/assets/images/readme/colour-checker-blue-on-pink.jpg)
+   - ![Contrast-check blue on white](/assets/images/readme/colour-checker-blue-on-white.jpg)
+   - ![Contrast-check pink on blue](/assets/images/readme/colour-checker-pink-on-blue.jpg)
+   - ![Contrast-check white on blue](/assets/images/readme/colour-checker-pink-on-blue.jpg)
 
  - **Font**
 
@@ -44,12 +44,12 @@ As the website is designed to be repeatedly used as a tool new user and return u
 ### Wireframes
 
 Wireframes showing the responsive development as the user interacts and makes choices
-  - [Wireframe for home page one](https://github.com/annemarie293/SFTW/blob/master/assets/images/wireframes/wireframe-home-1.jpg)
-  - [Wireframe for home page two with second question](https://github.com/annemarie293/SFTW/blob/master/assets/images/wireframes/wireframe-home-2.jpg)
-  - [Wireframe for destination page on open](https://github.com/annemarie293/SFTW/blob/master/assets/images/wireframes/wireframe-destination-1.jpg)
-  - [Wireframe for destination page once user makes initial destination choice, displaying loaction suggestions](https://github.com/annemarie293/SFTW/blob/master/assets/images/wireframes/wireframe-destination-2.jpg)
-  - [Wireframe for destination page once user makes location choice, displaying location information and local map](https://github.com/annemarie293/SFTW/blob/master/assets/images/wireframes/wireframe-destination-3.jpg)
-  - [Wireframe for itinerary page - form to request personalised travel plan](https://github.com/annemarie293/SFTW/blob/master/assets/images/wireframes/wireframe-itinerary.jpg)
+  - Wireframe for home page one ![Wireframe for home page one](/assets/images/wireframes/wireframe-home-1.jpg)
+  - Wireframe for home page two with second question ![Wireframe for home page two with second question](/assets/images/wireframes/wireframe-home-2.jpg)
+  - Wireframe for destination page on open ![Wireframe for destination page on open](/assets/images/wireframes/wireframe-destination-1.jpg)
+  - Wireframe for destination page once user makes initial destination choice, displaying location suggestions ![Wireframe for destination page once user makes initial destination choice, displaying location suggestions](/assets/images/wireframes/wireframe-destination-2.jpg)
+  - Wireframe for destination page once user makes location choice, displaying location information and local map ![Wireframe for destination page once user makes location choice, displaying location information and local map](/assets/images/wireframes/wireframe-destination-3.jpg)
+  - Wireframe for itinerary page - form to request personalised travel plan ![Wireframe for itinerary page - form to request personalised travel plan](/assets/images/wireframes/wireframe-itinerary.jpg)
 ___
 
 ## **FEATURES**
@@ -118,11 +118,11 @@ ___
     - Wireframes were created using the balsamiq app.
   - [JPEGmini Pro](https://www.jpegmini.com/)
     - Used to reduce file size of images while preserving quality, to improve page loading times.
-- [Image Compressor](https://imagecompressor.com/)
+  - [Image Compressor](https://imagecompressor.com/)
     - Used to reduce file size of images while preserving quality, to improve page loading times.
- - [Wix Logo Maker](https://www.wix.com/logo/maker)
+  - [Wix Logo Maker](https://www.wix.com/logo/maker)
     - Used to create the logo for the site.
- - [Moqups website mockup generator](https://moqups.com/)
+  - [Moqups website mockup generator](https://moqups.com/)
     - Used to generate a mockup of the site on multiple devices
   - [Web AIM contrast checker](https://webaim.org/resources/contrastchecker/)
     - Used to check contrast of colours used across the site to ensure readability
@@ -135,30 +135,30 @@ ___
 
 HTML Validation
 - No errors found
- - [W3C Markup Validator](https://validator.w3.org/) : [View Results](/workspace/SFTW/assets/images/readme/sftw-html-validation.jpg)
+ - [W3C Markup Validator](https://validator.w3.org/) : Results: ![View Results](/assets/images/readme/sftw-html-validation.jpg)
  
 CSS Validation
 - No errors found
- - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) : [View Results](/workspace/SFTW/assets/images/readme/sftw-css-validation.jpg)
+ - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) : Results: ![View Results](/assets/images/readme/sftw-css-validation.jpg)
  
 JS Validation
 Javascript validation carried out using [JS hint](https://jshint.com/)
  - home.js
     - Initial verification found some errors with Jquery "$" as an undeclared constant, searching [stackoverflow](https://try2explore.com/questions/10039255), I found advice to use `/*globals $:false */` as comments at the top of the file to instruct the validator that $ is a global variable, and the false indicates that it should not be overridden.
-    [Errors Screenshot](/workspace/SomethingForTheWeekend/assets/images/readme/jshint-home-errors.jpg)
+    - Errors: ![Errors Screenshot](/assets/images/readme/jshint-home-errors.jpg)
     - No errors found following this fix.
-    [Validated Screenshot](/workspace/SomethingForTheWeekend/assets/images/readme/jshint-home-final.jpg)
+    - Validated: ![Validated Screenshot](/assets/images/readme/jshint-home-final.jpg)
 
  - destinations.js
     - Initial verification found 30 errors related to use of const: '"const" is available in ES6'. Solution to this was found in [stackoverflow](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const) to add `/*jshint esversion: 6 */` as comment to tell JSHint that JS code uses ECMAScript 6 specific syntax.
     - Similar error to $ variable was found with goole variable, `/*globals google:false */` used to resolve.
-    [Errors Screenshot](/workspace/SomethingForTheWeekend/assets/images/readme/jshint-destinations-errors.jpg)
+    - Errors: ![Errors Screenshot](/assets/images/readme/jshint-destinations-errors.jpg)
     - Remaining errors all come from Google Maps API script taken directly from their developper page, so I did not want to change this code.
-    [Validated Screenshot](/workspace/SomethingForTheWeekend/assets/images/readme/jshint-destinations-final.jpg)
+    - Validated: ![Validated Screenshot](/assets/images/readme/jshint-destinations-final.jpg)
 
  - itinerary.js
     - Above fixes also applied to this page and no errors found
-    [Validated Screenshot](/workspace/SomethingForTheWeekend/assets/images/readme/jshint-itinerary-final.jpg)
+    - Validated: ![Validated Screenshot](/assets/images/readme/jshint-itinerary-final.jpg)
 
 
  ### User Stories
@@ -307,7 +307,7 @@ Testing was carried out by myself using Chrome DevTools while writing the code, 
 
 
 ### Lighthouse Testing
-![Lighthouse Results](/workspace/SomethingForTheWeekend/assets/images/readme/lighthouse-final.jpg)
+![Lighthouse Results](/assets/images/readme/lighthouse-final.jpg)
 #### Performance
 Initial score was in the mid-60s due to large image sizes and maps. Compressing the images greatly increased the performance speed. Remaining improvement option to "Eliminate render-blocking resources" refers to Bootstrap CDN which I can't remove.
 #### Accessibility
@@ -386,11 +386,11 @@ All code written by myself with the exception of:
 #### Media
 - **The photos used in this site were freely obtained from below image sites:**
 
-- [Ischia](https://stock.adobe.com/ie/images/landscape-with-aragonese-castle-ischia-island-italy/277322803?asset_id=277322803)
+ - [Ischia](https://stock.adobe.com/ie/images/landscape-with-aragonese-castle-ischia-island-italy/277322803?asset_id=277322803)
 
  - [Arcachon](https://stock.adobe.com/ie/images/arcachon-gironde-nouvelle-aquitaine-france/253464731?asset_id=253464731)
 
-  - [Madeira](https://stock.adobe.com/ie/images/panoramic-view-over-camara-de-lobos-madeira-island-portugal/164366892?asset_id=164366892)
+ - [Madeira](https://stock.adobe.com/ie/images/panoramic-view-over-camara-de-lobos-madeira-island-portugal/164366892?asset_id=164366892)
 
   - [Skiathos](https://www.shutterstock.com/image-photo/old-part-town-island-skiathos-greece-82643806)
 
@@ -398,37 +398,35 @@ All code written by myself with the exception of:
 
   - [Gdansk](https://stock.adobe.com/ie/images/aerial-cityscape-view-on-the-old-town-with-beautiful-coorful-buildings-in-gdansk-poland/129942453?asset_id=129942453)
 
-- [Bruges](https://stock.adobe.com/ie/images/beautiful-canal-and-traditional-houses-in-the-old-town-of-bruges-brugge-belgium/248976957?asset_id=248976957)
+ - [Bruges](https://stock.adobe.com/ie/images/beautiful-canal-and-traditional-houses-in-the-old-town-of-bruges-brugge-belgium/248976957?asset_id=248976957)
 
-- [Porto](https://stock.adobe.com/ie/images/porto-portugal-skyline/159701299?asset_id=159701299)
+ - [Porto](https://stock.adobe.com/ie/images/porto-portugal-skyline/159701299?asset_id=159701299)
 
-- [Budapest](https://stock.adobe.com/ie/images/budapest-hungary-aerial-view-of-the-parliament-of-hungary-at-winter-time-with-snowing/243445799?asset_id=243445799)
+ - [Budapest](https://stock.adobe.com/ie/images/budapest-hungary-aerial-view-of-the-parliament-of-hungary-at-winter-time-with-snowing/243445799?asset_id=243445799)
 
-- [Hallstatt](https://www.shutterstock.com/image-photo/winter-view-hallstatt-traditional-austrian-wood-409973635)
+ - [Hallstatt](https://www.shutterstock.com/image-photo/winter-view-hallstatt-traditional-austrian-wood-409973635)
 
-- [Tallinn](https://www.shutterstock.com/image-photo/panoramic-aerial-view-old-town-tallinn-1875823927)
+ - [Tallinn](https://www.shutterstock.com/image-photo/panoramic-aerial-view-old-town-tallinn-1875823927)
 
-- [Bergen](https://stock.adobe.com/ie/images/evening-view-on-bruges/85974819)
+ - [Bergen](https://stock.adobe.com/ie/images/evening-view-on-bruges/85974819)
 
-- [Palermo](https://unsplash.com/photos/ZXSDMEGipNY)
+ - [Palermo](https://unsplash.com/photos/ZXSDMEGipNY)
 
-- [Naples](https://www.shutterstock.com/image-photo/panoramic-aerial-view-old-town-tallinn-1875823927)
+ - [Naples](https://www.shutterstock.com/image-photo/panoramic-aerial-view-old-town-tallinn-1875823927)
 
-- [Lille](https://www.shutterstock.com/image-photo/lille-france-november-2019-cozy-cafe-1889729104)
+ - [Lille](https://www.shutterstock.com/image-photo/lille-france-november-2019-cozy-cafe-1889729104)
 
-- [Galway](https://www.shutterstock.com/image-photo/street-galway-ireland-september-2017-1159007608)
+ - [Galway](https://www.shutterstock.com/image-photo/street-galway-ireland-september-2017-1159007608)
 
-- [Food button](https://www.shutterstock.com/image-photo/assorted-indian-food-on-dark-wooden-573575497)
+ - [Food button](https://www.shutterstock.com/image-photo/assorted-indian-food-on-dark-wooden-573575497)
 
+ - [City button](https://www.shutterstock.com/image-photo/scenic-summer-aerial-panorama-old-town-1168888273)
 
-- [City button](https://www.shutterstock.com/image-photo/scenic-summer-aerial-panorama-old-town-1168888273)
+ - [Winter button](https://www.shutterstock.com/image-photo/winter-new-york-151906451)
 
-- [Winter button](https://www.shutterstock.com/image-photo/winter-new-york-151906451)
+ - [Summer button](https://www.shutterstock.com/image-photo/tropical-beach-coconut-palm-tree-1892388787)
 
-
-- [Summer button](https://www.shutterstock.com/image-photo/tropical-beach-coconut-palm-tree-1892388787)
-
-- [Hero Image on home page](https://www.pexels.com/photo/green-car-near-seashore-with-blue-ocean-1118448/)
+ - [Hero Image on home page](https://www.pexels.com/photo/green-car-near-seashore-with-blue-ocean-1118448/)
 
 #### Acknowledgements
 
