@@ -130,7 +130,7 @@ ___
    ___
 
 ## **TESTING**
-Full testing documentation found in separate file [testing.md](testing.md)
+Full testing documentation found in separate file [TESTING.md](TESTING.md)
 ___
 
 ## **DEPLOYMENT**
