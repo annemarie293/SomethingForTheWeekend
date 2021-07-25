@@ -375,16 +375,18 @@ ___
 All code written by myself with the exception of:
  - Google maps initMap and markMap taken directly from documentation, hotelMap function adapted from various examples in the documentation.
     - [Google Maps API](https://developers.google.com/maps)
+      - API key needed for this API, documentation and instructions on this can be found here: https://developers.google.com/maps/documentation/javascript/get-api-key
  - Email JS form submit code
-    -[Email JS](https://www.emailjs.com/docs/sdk/send-form/) 
+    - [Email JS](https://www.emailjs.com/docs/sdk/send-form/) 
  
 
 #### Content
-  - The text content for this site was all written by myself, Anne Marie Murphy.
+  - Introduction text for each location taken from [Lonely Planet](https://www.lonelyplanet.com)
+  - All other text content for this site was all written by myself, Anne Marie Murphy.
 
 
 #### Media
-- **The photos used in this site were freely obtained from below image sites:**
+*The photos used in this site were freely obtained from below image sites:*
 
  - [Ischia](https://stock.adobe.com/ie/images/landscape-with-aragonese-castle-ischia-island-italy/277322803?asset_id=277322803)
 
